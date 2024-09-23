@@ -1,0 +1,952 @@
+1
+00:00:04,00 --> 00:00:14,980
+သင်္ချာပြုခြင်း အနုပညာဟူသည် generality (ယေဘုယျကျခြင်း) ၏ ဗီဇအားလုံး ခြုံငုံပါဝင်သည့် special case (အထူးကိစ္စ) ကို ရှာဖွေဖော်ထုတ်ခြင်း ဖြစ်၏ - David Hilbert
+
+2
+00:00:14,980 --> 00:00:16,460
+ဟေး အားလုံးပဲ, ဒီက Grant ပါ
+
+3
+00:00:16,820 --> 00:00:19,875
+ဒါက calculus ရဲ့ အနှစ်သာရ အကြောင်း ဆီးရီးထဲက ပထမဆုံး ဗွီဒီယိုပါ
+
+4
+00:00:19,875 --> 00:00:23,600
+နောက်ပြီးတော့... ကျွန်တော် အောက်ပါ ဗွီဒီယိုတွေကို တစ်ရက် တစ်ခုနှုန်းနဲ့ လာမဲ့ ၁၀ ရက်ဆက် တင်ပေးသွားမှာပါ
+
+5
+00:00:24,300 --> 00:00:26,960
+ရည်ရွယ်ချက်ကတော့...ခေါင်းစဉ်မှာ ပြောတဲ့အတိုင်း... 
+
+6
+00:00:26,960 --> 00:00:29,720
+တစ်ထိုင်တည်း ကြည့်လို့ရတဲ့ တစ်ဆက်လုံးကနေ ဘာသာရပ်ရဲ့ အနှစ်သာရကို တကယ့်ကို နားလည်သွားဖို့ပါပဲ
+
+
+7
+00:00:30,320 --> 00:00:34,224
+ဒါပေမဲ့... calculus လို ကျယ်ပြန့်လှတဲ့ ခေါင်းစဉ်မျိုးအတွက်၊ ကျွန်တော် ဘာကို ဆိုလိုတာလဲက အမျိုးမျိုး အဓိပ္ပါယ်ပေါက်သွားနိုင်တော့
+
+8
+00:00:34,224 --> 00:00:36,200
+...ကျွန်တော့်စိတ်ထဲမှာ အထူးတလည် ရှိတဲ့ဟာကို ဒီမှာပြောပါမယ် 
+
+9
+00:00:36,940 --> 00:00:41,940
+Calculus မှာ အသေမှတ်ထားရမဲ့ အရာတွေအဖြစ် မကြာခဏဆိုသလို ပေးကြတဲ့ စည်းမျဉ်းတွေနဲ့ ဖော်မြူလာတွေ သိပ်ကိုများတယ်
+
+10
+00:00:42,480 --> 00:00:45,806
+များပြားလှတဲ့ derivative ဖော်မြူလာတွေ၊ product rule, chain rule
+
+11
+00:00:45,806 --> 00:00:50,031
+implicit differentiation, “integrals နဲ့ derivatives က ပြောင်းပြန်ဆိုတဲ့အချက်” 
+
+12
+00:00:50,031 --> 00:00:52,460
+Taylor series... အဲလိုမျိုးဟာတွေ အများအများကြီးပေါ့
+
+13
+00:00:52,960 --> 00:00:57,080
+ပြီးတော့... ကျွန်တော့် ပန်းတိုင်က calculus ကို သင်ကိုယ်တိုင် တီထွင်နိုင်ခဲ့တာ ဖြစ်နိုင်ပါလားဆိုတဲ့ ခံစားချက်မျိုး သင့်အတွက် ရသွားစေချင်တာ
+
+15
+00:00:57,640 --> 00:01:01,690
+ဆိုလိုတာက... အဓိက ပင်မ အိုင်ဒီယာအားလုံး ကာမိမယ်... ဒါပေမဲ့ သူတို့ ဘယ်ကနေ လာတာလဲ၊ 
+
+16
+00:01:01,690 --> 00:01:06,000
+...ပြီးတော့ သူတို့ တကယ့် ဆိုလိုရင်းကရော ဘာလဲဆိုတာကို ရှင်းရှင်းလင်းလင်း ဖြစ်စေမဲ့ ရှုထောင့်ပေါင်းစုံ အမြင်သရုပ်ဖော် ချဉ်းကပ် နည်းကို အသုံးပြုမှာပါ
+
+17
+00:01:06,920 --> 00:01:14,040
+သင်္ချာထွင်တာ ဟာသမဟုတ်ဘူးနော်၊ ပြီးတော့ တစ်စုံတစ်ခု ဘာကြောင့် မှန်ရပါတယ်လို့ ကိုယ့်ကို ပြောတာနဲ့ အဲဒီဟာကို ကိုယ်တိုင် အစကနေ အဆုံးထိ စဖော်ထုတ်တာရယ် ကွာခြားချက် ရှိပါတယ်
+
+19
+00:01:14,680 --> 00:01:19,141
+ဒါပေမဲ့ နေရာတိုင်းမှာ...ကျွန်တော် သင့်ကိုယ်သင် ပြန်မေးကြည့်စေချင်တာက... သင်သာ ရှေးဦးကာလ သင်္ချာပညာရှင် တစ်ယောက်ဖြစ်ခဲ့ရင်
+
+20
+00:01:19,141 --> 00:01:22,082
+ဒီအိုင်ဒီယာတွေကို စဉ်းစားကြည့်ရင်း၊ မှန်ကန်တဲ့ ပုံတွေ ဆွဲကြည့်ရင်း
+
+21
+00:01:22,082 --> 00:01:26,240
+သင်ကိုယ်တိုင် အဲဒီလို အမှန်တရားတွေကို အမှတ်မထင် တွေ့ရှိခဲ့နိုင်တယ်ဆိုတာ ကျိုးကြောင်းညီညွတ်တယ် ခံစားရမလား(? ဆိုတာပါ) 
+
+22
+00:01:26,820 --> 00:01:31,627
+ဒီဗွီဒီယိုမှာတော့  calculus ရဲ့ ပင်မအိုင်ဒီယာတွေကို သင်ဘယ်လိုများ အမှတ်မထင် တွေ့ရှိခဲ့နိုင်ကြောင်း ကျွန်တော် ပြချင်တာ
+
+
+23
+00:01:31,627 --> 00:01:36,840
+ဂျီဩမေတြီရဲ့ သီးခြား အစိတ်အပိုင်းလေး တစ်ခုဖြစ်တဲ့ စက်ဝိုင်းဧရိယာအကြောင်း နက်နက်ရှိုင်းရှိုင်း စဉ်းစားကြည့်ရင်းနဲ့ (ကျွန်တော် ပြချင်တာပါ)
+
+24
+00:01:37,780 --> 00:01:41,040
+ပိုင်ကို ၎င်း(စက်ဝိုင်း) ၏အချင်းဝက် နှစ်ထပ်ကိန်းနဲ့ မြှောက်တာ၊ ဒါပေမဲ့ ဘာကြောင့်လဲ?
+
+25
+00:01:41,580 --> 00:01:44,460
+ဒီဖော်မြူလာ ဘယ်လိုဖြစ်လာလဲ စဉ်းစားကြည့်ဖို့ ‌နည်းလမ်းကောင်း တစ်ခု ရှိမလား?
+
+26
+00:01:45,420 --> 00:01:49,378
+ဒီပုစ္ဆာကို ဆင်ခြင်ကြည့်ရင်းနဲ့ ပေါ်ပေါက်လာတဲ့ စိတ်ဝင်စားစရာကောင်းတဲ့ စိတ်ကူးစိတ်သန်းတွေကို စူးစမ်းလေ့လာဖို့ အတွေးများနဲ့ သင့်ကိုယ်သင် စီးမျောခိုင်းလိုက်ရင် 
+
+27
+00:01:49,378 --> 00:01:59,840
+calculus ရဲ့ အယူအဆကြီး သုံးခုဖြစ်တဲ့ integrals, derivatives နဲ့ “၎င်းတို့နှစ်ခု ဆန့်ကျင်ဘက်ဖြစ်တယ် ဆိုတဲ့အချက်” တို့ကို အချိန်တိုအတွင်း ထိုးထွင်းသိမြင် သွားစေနိုင်မှာပါ
+
+29
+00:01:59,840 --> 00:02:04,840
+ဒါပေမဲ့ ဇာတ်လမ်းက ဒီ့ထက်ပိုပြီး ရိုရိုးလေးနဲ့ စမှာပါ... သင်နဲ့ စက်ဝိုင်းတစ်ခုပါပဲ၊ သူ့ အချင်းဝက်က ၃ ယူနစ်ဆိုပါစို့
+
+30
+00:02:05,700 --> 00:02:11,537
+သင်က ၎င်းစက်ဝိုင်း ဧရိယာကို တွက်ယူဖို့ ကြိုးစားနေတာ... အဲဒီဧရိယာကို မတူညီတဲ့ နည်းလမ်းအမျိုးမျိုးနဲ့ စိတ်ပိုင်းကြည့်လိုက်
+
+00:02:11,537--> 00:02:13,537
+အပိုင်းလေးတွေကို ပြန်စီကြည့်လိုက်နဲ့  စာရွက်တွေ အများကြီး ကုန်သွားပြီးတဲ့အခါမှာတော့...
+
+32
+00:02:13,537 --> 00:02:16,904
+အများစုက သူ့ဟာနဲ့သူ စိတ်ဝင်စားစရာ လေ့လာတွေ့ရှိချက်တွေဆီကို ရောက်ရှိကောင်း ရောက်ရှိသွားနိုင်ပါတယ်
+
+33
+00:02:16,904 --> 00:02:21,060
+သင်ဟာ စက်ဝိုင်းကို ဗဟိုပြု ကွင်းလေးတွေ အများကြီး ပိုင်းဖြတ်ဖို့ စိတ်ကူးကို စမ်းကြည့်တာ ဖြစ်နိုင်တယ်
+
+34
+00:02:22,000 --> 00:02:25,858
+ဒါဟာ စက်ဝိုင်းရဲ့ ‌symmetries ကို လေးစားလိုက်နာတဲ့  အတွက် အဆင်ပြေလောက်မယ် ထင်ရတယ်...
+
+35
+00:02:25,858 --> 00:02:29,460
+နောက်ပြီးတော့... သင်္ချာဟာ သူ့ရဲ့ symmetries တွေကို အလေးထား လိုက်နာတဲ့အခါ သင့်ကိုလည်း ပြန်လည်ဆုချတတ်တဲ့ သဘောရှိတယ်
+
+36
+00:02:30,360 --> 00:02:35,060
+အဲဒီ ကွင်းတွေထဲက အတွင်းဘက် အချင်းဝက် 0 နဲ့ 3 ကြား တစ်ခုခု ရှိတဲ့ တစ်ခုကို ယူလိုက်မယ် ဆိုပါစို့
+
+37
+00:02:36,220 --> 00:02:39,972
+ဒီလို ကွင်းတစ်ခုချင်း ဧရိယာကိုဖော်ပြတဲ့ expression ကို ကျွန်တော်တို့ ရှာနိုင်ရင်...
+
+38
+00:02:39,972 --> 00:02:43,015
+ပြီးတော့... အဲ့ဒါတွေအားလုံးကို ပေါင်းလို့ရမဲ့ နည်းလမ်းကောင်းတစ်ခုသာ ရှိခဲ့မယ်ဆိုရင်...
+
+39
+00:02:43,015 --> 00:02:45,500
+စက်ဝိုင်းတစ်ခုလုံးရဲ့ ဧရိယာကို နားလည်ခြင်းဆီ ရောက်ရှိနိုင်မှာပါ
+
+40
+00:02:46,420 --> 00:02:49,120
+ဒီကွင်းလေးကို တန်းသွားအောင် ဖြန့်လိုက်မဲ့ စိတ်ကူးနဲ့ သင် စတင်ကောင်း စတင်မယ်
+
+41
+00:02:50,800 --> 00:02:55,043
+ပြီးတော့... သင်ဟာ အဲဒီက ရလာတဲ့ ပုံအသစ်က ဘာပုံဖြစ်မလဲ စဉ်းစားကြည့်နိုင်မယ်... ပြီးတော့ သူ့
+
+42
+00:02:55,043 --> 00:02:59,180
+ဧရိယာကရော ဘယ်လောက် ဖြစ်သင့်လဲ??? ဒါပေမဲ့ ရိုးရှင်းအောင်, အဲဒါကို စတုဂံလို့ပဲ အနီးစပ်ဆုံး ယူလိုက်ရအောင်
+
+43
+00:03:00,180 --> 00:03:03,914
+အဲ့ဒီ စတုဂံရဲ့ အကျယ်က နဂိုကွင်းဝိုင်းရဲ့ လုံးပါတ် (circumference) ဖြစ်တယ်
+
+44
+00:03:03,914 --> 00:03:05,440
+အဲဒါ (လုံးပါတ်) က 2 pi အမြှောက် r, ဟုတ်တယ်မလား?
+
+45
+00:03:05,860 --> 00:03:08,060
+pi ရဲ့ အဓိပ္ပါယ်ကိုက အနှစ်ခြုပ်က အဲဒါပဲလို့ ကျွန်တော်ဆိုလိုချင်တာ
+
+46
+00:03:08,680 --> 00:03:09,380
+ပြီးတော့... သူ့ရဲ့ အထူကရော?
+
+47
+00:03:10,200 --> 00:03:14,201
+အဲဒါ (အထူ) က စကတည်းက စက်ဝိုင်းကို မင်းဘယ်လောက်ထိ ခပ်စိပ်စိပ်ပိုင်းမလဲပေါ် မူတည်တာပေါ့
+
+48
+00:03:14,201 --> 00:03:15,620
+ပိုင်းတာကတော့ စိတ်ကြိုက် ပိုင်းလို့ရပါတယ်
+
+49
+00:03:16,340 --> 00:03:20,147
+Calculus မှာ စံသုံး ဖြစ်လာမဲ့ သင်္ကေတနဲ့ ညီညွတ်အောင် ရည်ရွယ်ပြီး
+
+
+50
+00:03:20,147 --> 00:03:24,960
+အဲ့ဒီ အထူကို dr လို့ပဲ ခေါ်ကြရအောင်။ သူက ကွင်းဝိုင်းတစ်ခုနဲ့ ကပ်ရက်နောက်တစ်ခုရဲ့ အချင်းဝက် ခြားနားချက် ပါပဲ။
+
+52
+00:03:25,480 --> 00:03:27,880
+အဲဒါကို 0.1 လောက်ဖြစ်မယ်လို့ သင်စဉ်းစားချင် စဉ်းစားနိုင်တယ်
+
+53
+00:03:28,980 --> 00:03:32,916
+ဖြန့်လိုက်တဲ့ ကွင်းဝိုင်းကို စတုဂံပါးပါးလေးအဖြစ် အနီးဆုံးယူမယ်ဆိုရင်
+
+54
+00:03:32,916 --> 00:03:37,600
+သူ့ ဧရိယာက 2 pi အမြှောက် r (အချင်းဝက်) အမြှောက် dr (အထူနည်းနည်းလေး)
+
+55
+00:03:38,600 --> 00:03:42,488
+လုံးဝ အတိအကျကြီး မဟုတ်ရင်တောင် သေးသထက် သေးလာတဲ့ dr ပမာဏ အတွက်ဆိုရင်
+
+56
+00:03:42,488 --> 00:03:46,533
+ဒါဟာ စက်ဝိုင်းရဲ့ ဧရိယာအစစ်အမှန်အတွက် ကောင်းသည်ထက်ကောင်းလာတဲ့ အနီးစပ်ဆုံးယူတာ ဖြစ်လာမှာပါ
+
+57
+00:03:46,533 --> 00:03:51,044
+ဘာကြောင့်လဲဆိုတော့ ဒီပုံရဲ့ အပေါ်အနားနဲ့ အောက်အနား ကပ်သည်ထက်ကပ်လာပြီး 
+
+58
+00:03:51,044 --> 00:03:52,600
+အလျားတူတူဖြစ်သွားမှာမို့လို့လေ 
+
+59
+00:03:53,540 --> 00:03:55,979
+ဒီတော့ အခု အနီးစပ်ဆုံးယူနည်းနဲ့ပဲ ရှေ့ဆက်ကြရအောင်
+
+60
+00:03:55,979 --> 00:03:58,747
+ပါးပါးလေး မှားနေတယ်ဆိုတာကိုလည်း စိတ်ထဲမှာ မှတ်ယူထားမယ်
+
+61
+00:03:58,747 --> 00:04:02,360
+ဒါပေမဲ့ သေးသည်ထက်သေးတဲ့ dr ရွေးချယ်စရာတွေအတွက် ပိုပိုပြီးတိကျလာမယ်
+
+62
+00:04:03,220 --> 00:04:06,400
+ဆိုလိုတာက... ပါးသထက် ပါးတဲ့ ကွင်းဝိုင်းလေးတွေဖြစ်အောင် ငါတို့ ပိုင်းလိုက်မယ်ဆိုရင်လေ
+
+63
+00:04:07,700 --> 00:04:12,445
+ဒီတော့... ခုရောက်တဲ့ထိ ပြန်အနှစ်ခြုပ်ကြည့်ရင်... ငါတို့ စက်ဝိုင်း ဧရိယာကို
+
+64
+00:04:12,445 --> 00:04:17,251
+အဲဒီလို ကွင်းဝိုင်းလေးတွေ ခွဲစိတ်တယ်။ နောက်ပြီးတော့ ငါတို့ အဲဒီဟာလေးတွေ တစ်ခုချင်းကို အနီးစပ်ဆုံးအဖြစ်
+
+65
+00:04:17,251 --> 00:04:22,120
+2 pi အမြှောက် ၎င်း၏ အချင်းဝက် အမြှောက် dr ယူတယ်။ ဒီနေရမှာ အဲဒီ အတွင်းဘက် အချင်းဝက် တစ်ခုချင်း တန်ဖိုးက
+
+66
+00:04:22,120 --> 00:04:26,865
+အသေးဆုံး ကွင်းဝိုင်းလေးအတွက် 0 ကနေ အကြီးဆုံး ကွင်းဝိုင်းအတွက် 3 အောက် (နည်းနည်းလျော့) ထိ ဖြည်းဖြည်းချင်း တိုးသွားမယ်
+
+67
+00:04:26,865 --> 00:04:31,980
+တစ်ခုနဲ့ တစ်ခုက  မင်း dr အတွက် သတ်မှတ်လိုက်တဲ့ အထူအတိုင်း ကွာဟနေမယ်, 0.1 လောက်ပေါ့ 
+
+68
+00:04:33,140 --> 00:04:37,028
+ပြီးတော့... ဒီကိစ္စမှာ တန်ဖိုးတစ်ခုနဲ့ တစ်ခုကြား အကွာဝေး (ဟနေတဲ့ နေရာ) သက်ဆိုင်တာက
+
+69
+00:04:37,028 --> 00:04:41,300
+ကွင်းဝိုင်းတစ်ခုစီရဲ့ အထူ dr (ကွင်းဝိုင်းတစ်ခုနဲ့ နောက်တစ်ခုရဲ့ အချင်းဝက် ခြားနားချက်) ဖြစ်တာကို သတိပြုကြည့်ပါ
+
+70
+00:04:42,260 --> 00:04:46,067
+တကယ်တော့...  ကွင်းဝိုင်းရဲ့ ဧရိယာ တစ်ခုစီကို အနီးစပ်ဆုံးယူတဲ့ စတုဂံတွေကို မြင်အောင်ကြည့်ဖို့ နည်းလမ်းကောင်းတစ်ခုက
+
+71
+00:04:46,067 --> 00:04:49,820
+၎င်းတို အားလုံးကို ဘေးချင်းယှဉ်လျက် တည့်တည့်ထောင်ပြီး ဝင်ရိုးတလျှောက် အံဝင်ခွင်ကျ ထားလိုက်တာ ဖြစ်ပါတယ် 
+
+72
+00:04:50,660 --> 00:04:51,660
+တစ်ခုစီရဲ့ အထူက dr ရှိတယ်... 
+
+00:04:51,660 --> 00:04:55,882
+ဒါကြောင့်လဲ သူတို့အားလုံးက အဲ့ဒီနေရာ (ဝင်ရိုးပေါ်) မှာပဲ  အားလုံးက သိပ်ကို ချပ်ချပ်ရပ်ရပ် ကွက်တိ ဝင်နေကြတာ
+
+73
+00:04:55,882 --> 00:05:01,294
+ပြီးတော့...  သီးသန့် r တန်ဖိုး တစ်ခုခု ပေါ်မှာ ထိုင်နေတဲ့ အဲ့ဒီ စတုဂံတွေထဲက ကြိုက်ရာတစ်ခုရဲ့ အမြင့်ဟာ
+
+74
+00:05:01,294 --> 00:05:04,000
+r က 0.6 ဆိုရင်... 2 pi အမြှောက် အဲ့ဒီ r တန်ဖိုး အတိအကျ ဖြစ်မယ် (ဆိုလိုတာက 2 x pi x 0.6)
+
+75
+00:05:04,640 --> 00:05:08,960
+That's the circumference of the corresponding ring that this rectangle approximates.
+
+76
+00:05:09,560 --> 00:05:12,604
+Pictures like this 2 pi r can get tall for the screen,
+
+77
+00:05:12,604 --> 00:05:16,977
+I mean 2 times pi times 3 is around 19, so let's just throw up a y axis that's
+
+78
+00:05:16,977 --> 00:05:21,405
+scaled a little differently so that we can actually fit all of these rectangles
+
+79
+00:05:21,405 --> 00:05:22,180
+on the screen.
+
+80
+00:05:23,260 --> 00:05:26,995
+A nice way to think about this setup is to draw the graph of 2 pi r,
+
+81
+00:05:26,995 --> 00:05:29,540
+which is a straight line that has a slope 2 pi.
+
+82
+00:05:30,100 --> 00:05:34,800
+Each of these rectangles extends up to the point where it just barely touches that graph.
+
+83
+00:05:36,000 --> 00:05:37,460
+Again, we're being approximate here.
+
+84
+00:05:37,900 --> 00:05:40,060
+Each of these rectangles only approximates the
+
+85
+00:05:40,060 --> 00:05:42,220
+area of the corresponding ring from the circle.
+
+86
+00:05:42,940 --> 00:05:46,308
+But remember, that approximation, 2 pi r times dr,
+
+87
+00:05:46,308 --> 00:05:50,800
+gets less and less wrong as the size of dr gets smaller and smaller.
+
+88
+00:05:51,800 --> 00:05:54,012
+And this has a very beautiful meaning when we're
+
+89
+00:05:54,012 --> 00:05:56,540
+looking at the sum of the areas of all those rectangles.
+
+90
+00:05:57,080 --> 00:06:00,110
+For smaller and smaller choices of dr, you might at first
+
+91
+00:06:00,110 --> 00:06:03,140
+think that turns the problem into a monstrously large sum.
+
+92
+00:06:03,600 --> 00:06:05,600
+I mean, there's many many rectangles to consider,
+
+93
+00:06:05,600 --> 00:06:09,200
+and the decimal precision of each one of their areas is going to be an absolute nightmare.
+
+94
+00:06:10,060 --> 00:06:15,300
+But notice, all of their areas in aggregate just looks like the area under a graph.
+
+95
+00:06:15,980 --> 00:06:19,429
+And that portion under the graph is just a triangle,
+
+96
+00:06:19,429 --> 00:06:23,400
+a triangle with a base of 3 and a height that's 2 pi times 3.
+
+97
+00:06:24,140 --> 00:06:30,500
+So its area, 1 half base times height, works out to be exactly pi times 3 squared.
+
+98
+00:06:31,360 --> 00:06:35,195
+Or if the radius of our original circle was some other value,
+
+99
+00:06:35,195 --> 00:06:38,660
+capital R, that area comes out to be pi times r squared.
+
+100
+00:06:39,380 --> 00:06:41,460
+And that's the formula for the area of a circle.
+
+101
+00:06:42,320 --> 00:06:45,459
+It doesn't matter who you are or what you typically think of math,
+
+102
+00:06:45,459 --> 00:06:47,380
+that right there is a beautiful argument.
+
+103
+00:06:50,180 --> 00:06:52,869
+But if you want to think like a mathematician here,
+
+104
+00:06:52,869 --> 00:06:57,006
+you don't just care about finding the answer, you care about developing general
+
+105
+00:06:57,006 --> 00:06:58,920
+problem-solving tools and techniques.
+
+106
+00:06:59,680 --> 00:07:03,819
+So take a moment to meditate on what exactly just happened and why it worked,
+
+107
+00:07:03,819 --> 00:07:07,640
+because the way we transitioned from something approximate to something
+
+108
+00:07:07,640 --> 00:07:11,780
+precise is actually pretty subtle and cuts deep to what calculus is all about.
+
+109
+00:07:13,820 --> 00:07:18,970
+You had this problem that could be approximated with the sum of many small numbers,
+
+110
+00:07:18,970 --> 00:07:24,060
+each of which looked like 2 pi r times dr, for values of r ranging between 0 and 3.
+
+111
+00:07:26,600 --> 00:07:32,007
+Remember, the small number dr here represents our choice for the thickness of each ring,
+
+112
+00:07:32,007 --> 00:07:32,980
+for example 0.1.
+
+113
+00:07:33,520 --> 00:07:35,640
+And there are two important things to note here.
+
+114
+00:07:36,080 --> 00:07:40,703
+First of all, not only is dr a factor in the quantities we're adding up,
+
+115
+00:07:40,703 --> 00:07:45,580
+2 pi r times dr, it also gives the spacing between the different values of r.
+
+116
+00:07:46,240 --> 00:07:50,520
+And secondly, the smaller our choice for dr, the better the approximation.
+
+117
+00:07:52,200 --> 00:07:55,255
+Adding all of those numbers could be seen in a different,
+
+118
+00:07:55,255 --> 00:07:59,996
+pretty clever way as adding the areas of many thin rectangles sitting underneath a graph,
+
+119
+00:07:59,996 --> 00:08:02,420
+the graph of the function 2 pi r in this case.
+
+120
+00:08:02,940 --> 00:08:07,487
+Then, and this is key, by considering smaller and smaller choices for dr,
+
+121
+00:08:07,487 --> 00:08:12,649
+corresponding to better and better approximations of the original problem, the sum,
+
+122
+00:08:12,649 --> 00:08:18,180
+thought of as the aggregate area of those rectangles, approaches the area under the graph.
+
+123
+00:08:19,000 --> 00:08:23,533
+And because of that, you can conclude that the answer to the original question,
+
+124
+00:08:23,533 --> 00:08:28,520
+in full unapproximated precision, is exactly the same as the area underneath this graph.
+
+125
+00:08:30,860 --> 00:08:35,075
+A lot of other hard problems in math and science can be broken down
+
+126
+00:08:35,075 --> 00:08:38,422
+and approximated as the sum of many small quantities,
+
+127
+00:08:38,422 --> 00:08:43,940
+like figuring out how far a car has traveled based on its velocity at each point in time.
+
+128
+00:08:44,760 --> 00:08:48,823
+In a case like that, you might range through many different points in time,
+
+129
+00:08:48,823 --> 00:08:53,314
+and at each one multiply the velocity at that time times a tiny change in time, dt,
+
+130
+00:08:53,314 --> 00:08:57,912
+which would give the corresponding little bit of distance traveled during that little
+
+131
+00:08:57,912 --> 00:08:58,180
+time.
+
+132
+00:08:59,260 --> 00:09:03,210
+I'll talk through the details of examples like this later in the series,
+
+133
+00:09:03,210 --> 00:09:07,431
+but at a high level many of these types of problems turn out to be equivalent
+
+134
+00:09:07,431 --> 00:09:12,140
+to finding the area under some graph, in much the same way that our circle problem did.
+
+135
+00:09:13,200 --> 00:09:16,201
+This happens whenever the quantities you're adding up,
+
+136
+00:09:16,201 --> 00:09:19,093
+the one whose sum approximates the original problem,
+
+137
+00:09:19,093 --> 00:09:23,240
+can be thought of as the areas of many thin rectangles sitting side by side.
+
+138
+00:09:24,640 --> 00:09:29,842
+If finer and finer approximations of the original problem correspond to thinner and
+
+139
+00:09:29,842 --> 00:09:35,168
+thinner rings, then the original problem is equivalent to finding the area under some
+
+140
+00:09:35,168 --> 00:09:35,540
+graph.
+
+141
+00:09:36,600 --> 00:09:40,480
+Again, this is an idea we'll see in more detail later in the series,
+
+142
+00:09:40,480 --> 00:09:43,180
+so don't worry if it's not 100% clear right now.
+
+143
+00:09:43,780 --> 00:09:47,207
+The point now is that you, as the mathematician having just
+
+144
+00:09:47,207 --> 00:09:50,635
+solved a problem by reframing it as the area under a graph,
+
+145
+00:09:50,635 --> 00:09:54,520
+might start thinking about how to find the areas under other graphs.
+
+146
+00:09:55,640 --> 00:10:00,372
+We were lucky in the circle problem that the relevant area turned out to be a triangle,
+
+147
+00:10:00,372 --> 00:10:03,760
+but imagine instead something like a parabola, the graph of x2.
+
+148
+00:10:04,760 --> 00:10:08,077
+What's the area underneath that curve, say between
+
+149
+00:10:08,077 --> 00:10:10,680
+the values of x equals 0 and x equals 3?
+
+150
+00:10:12,080 --> 00:10:14,760
+Well, it's hard to think about, right?
+
+151
+00:10:15,220 --> 00:10:18,020
+And let me reframe that question in a slightly different way.
+
+152
+00:10:18,020 --> 00:10:23,060
+We'll fix that left endpoint in place at 0, and let the right endpoint vary.
+
+153
+00:10:26,860 --> 00:10:30,628
+Are you able to find a function, a of x, that gives
+
+154
+00:10:30,628 --> 00:10:34,180
+you the area under this parabola between 0 and x?
+
+155
+00:10:35,620 --> 00:10:39,580
+A function a of x like this is called an integral of x2.
+
+156
+00:10:40,500 --> 00:10:44,655
+Calculus holds within it the tools to figure out what an integral like this is,
+
+157
+00:10:44,655 --> 00:10:47,200
+but right now it's just a mystery function to us.
+
+158
+00:10:47,500 --> 00:10:51,102
+We know it gives the area under the graph of x2 between some fixed
+
+159
+00:10:51,102 --> 00:10:54,920
+left point and some variable right point, but we don't know what it is.
+
+160
+00:10:55,660 --> 00:10:59,676
+And again, the reason we care about this kind of question is not just
+
+161
+00:10:59,676 --> 00:11:02,430
+for the sake of asking hard geometry questions,
+
+162
+00:11:02,430 --> 00:11:06,562
+it's because many practical problems that can be approximated by adding
+
+163
+00:11:06,562 --> 00:11:10,750
+up a large number of small things can be reframed as a question about an
+
+164
+00:11:10,750 --> 00:11:12,300
+area under a certain graph.
+
+165
+00:11:13,420 --> 00:11:17,427
+I'll tell you right now that finding this area, this integral function,
+
+166
+00:11:17,427 --> 00:11:22,047
+is genuinely hard, and whenever you come across a genuinely hard question in math,
+
+167
+00:11:22,047 --> 00:11:25,833
+a good policy is to not try too hard to get at the answer directly,
+
+168
+00:11:25,833 --> 00:11:29,340
+since usually you just end up banging your head against a wall.
+
+169
+00:11:30,080 --> 00:11:33,780
+Instead, play around with the idea, with no particular goal in mind.
+
+170
+00:11:34,340 --> 00:11:38,136
+Spend some time building up familiarity with the interplay between the
+
+171
+00:11:38,136 --> 00:11:42,360
+function defining the graph, in this case x2, and the function giving the area.
+
+172
+00:11:44,090 --> 00:11:48,020
+In that playful spirit, if you're lucky, here's something you might notice.
+
+173
+00:11:48,580 --> 00:11:54,848
+When you slightly increase x by some tiny nudge dx, look at the resulting change in area,
+
+174
+00:11:54,848 --> 00:12:00,420
+represented with this sliver I'm going to call da for a tiny difference in area.
+
+175
+00:12:01,380 --> 00:12:05,575
+That sliver can be pretty well approximated with a rectangle,
+
+176
+00:12:05,575 --> 00:12:08,620
+one whose height is x2 and whose width is dx.
+
+177
+00:12:09,660 --> 00:12:12,284
+And the smaller the size of that nudge dx, the
+
+178
+00:12:12,284 --> 00:12:15,020
+more that sliver actually looks like a rectangle.
+
+179
+00:12:16,800 --> 00:12:21,080
+This gives us an interesting way to think about how a of x is related to x2.
+
+180
+00:12:22,000 --> 00:12:26,647
+A change to the output of a, this little da, is about equal to x2,
+
+181
+00:12:26,647 --> 00:12:30,254
+where x is whatever input you started at, times dx,
+
+182
+00:12:30,254 --> 00:12:34,000
+the little nudge to the input that caused a to change.
+
+183
+00:12:34,780 --> 00:12:40,389
+Or rearranged, da divided by dx, the ratio of a tiny change in a to the tiny
+
+184
+00:12:40,389 --> 00:12:45,780
+change in x that caused it, is approximately whatever x2 is at that point.
+
+185
+00:12:46,560 --> 00:12:48,804
+And that's an approximation that should get better
+
+186
+00:12:48,804 --> 00:12:50,960
+and better for smaller and smaller choices of dx.
+
+187
+00:12:52,100 --> 00:12:55,640
+In other words, we don't know what a of x is, that remains a mystery.
+
+188
+00:12:56,080 --> 00:12:59,500
+But we do know a property that this mystery function must have.
+
+189
+00:13:00,160 --> 00:13:05,052
+When you look at two nearby points, for example 3 and 3.001,
+
+190
+00:13:05,052 --> 00:13:10,265
+consider the change to the output of a between those two points,
+
+191
+00:13:10,265 --> 00:13:16,120
+the difference between the mystery function evaluated at 3.001 and 3.001.
+
+192
+00:13:16,120 --> 00:13:22,283
+That change, divided by the difference in the input values, which in this case is 0.001,
+
+193
+00:13:22,283 --> 00:13:28,100
+should be about equal to the value of x2 for the starting input, in this case 3.001.
+
+194
+00:13:30,200 --> 00:13:34,479
+And this relationship between tiny changes to the mystery function
+
+195
+00:13:34,479 --> 00:13:38,440
+and the values of x2 itself is true at all inputs, not just 3.
+
+196
+00:13:39,420 --> 00:13:42,021
+That doesn't immediately tell us how to find a of x,
+
+197
+00:13:42,021 --> 00:13:44,820
+but it provides a very strong clue that we can work with.
+
+198
+00:13:46,260 --> 00:13:48,740
+And there's nothing special about the graph x2 here.
+
+199
+00:13:49,280 --> 00:13:53,787
+Any function defined as the area under some graph has this property,
+
+200
+00:13:53,787 --> 00:13:58,947
+that da divided by a slight nudge to the output of a divided by a slight nudge
+
+201
+00:13:58,947 --> 00:14:04,500
+to the input that caused it, is about equal to the height of the graph at that point.
+
+202
+00:14:06,200 --> 00:14:10,360
+Again, that's an approximation that gets better and better for smaller choices of dx.
+
+203
+00:14:11,640 --> 00:14:16,040
+And here, we're stumbling into another big idea from calculus, derivatives.
+
+204
+00:14:17,100 --> 00:14:22,170
+This ratio da divided by dx is called the derivative of a, or more technically,
+
+205
+00:14:22,170 --> 00:14:27,240
+the derivative of whatever this ratio approaches as dx gets smaller and smaller.
+
+206
+00:14:28,180 --> 00:14:32,089
+I'll dive much more deeply into the idea of a derivative in the next video,
+
+207
+00:14:32,089 --> 00:14:36,565
+but loosely speaking it's a measure of how sensitive a function is to small changes in
+
+208
+00:14:36,565 --> 00:14:37,080
+its input.
+
+209
+00:14:37,940 --> 00:14:42,221
+You'll see as the series goes on that there are many ways you can visualize a derivative,
+
+210
+00:14:42,221 --> 00:14:45,217
+depending on what function you're looking at and how you think
+
+211
+00:14:45,217 --> 00:14:46,740
+about tiny nudges to its output.
+
+212
+00:14:48,600 --> 00:14:52,210
+We care about derivatives because they help us solve problems,
+
+213
+00:14:52,210 --> 00:14:57,140
+and in our little exploration here, we already have a glimpse of one way they're used.
+
+214
+00:14:57,840 --> 00:15:00,491
+They are the key to solving integral questions,
+
+215
+00:15:00,491 --> 00:15:03,420
+problems that require finding the area under a curve.
+
+216
+00:15:04,360 --> 00:15:07,725
+Once you gain enough familiarity with computing derivatives,
+
+217
+00:15:07,725 --> 00:15:12,635
+you'll be able to look at a situation like this one where you don't know what a function
+
+218
+00:15:12,635 --> 00:15:15,615
+is, but you do know that its derivative should be x2,
+
+219
+00:15:15,615 --> 00:15:18,760
+and from that reverse engineer what the function must be.
+
+220
+00:15:20,700 --> 00:15:23,883
+This back and forth between integrals and derivatives,
+
+221
+00:15:23,883 --> 00:15:28,052
+where the derivative of a function for the area under a graph gives you
+
+222
+00:15:28,052 --> 00:15:32,162
+back the function defining the graph itself, is called the fundamental
+
+223
+00:15:32,162 --> 00:15:33,320
+theorem of calculus.
+
+224
+00:15:34,220 --> 00:15:38,820
+It ties together the two big ideas of integrals and derivatives,
+
+225
+00:15:38,820 --> 00:15:42,360
+and shows how each one is an inverse of the other.
+
+226
+00:15:44,800 --> 00:15:47,355
+All of this is only a high-level view, just a peek
+
+227
+00:15:47,355 --> 00:15:49,860
+at some of the core ideas that emerge in calculus.
+
+228
+00:15:50,500 --> 00:15:54,420
+And what follows in this series are the details, for derivatives and integrals and more.
+
+229
+00:15:54,980 --> 00:15:59,156
+At all points, I want you to feel that you could have invented calculus yourself,
+
+230
+00:15:59,156 --> 00:16:03,485
+that if you drew the right pictures and played with each idea in just the right way,
+
+231
+00:16:03,485 --> 00:16:07,305
+these formulas and rules and constructs that are presented could have just
+
+232
+00:16:07,305 --> 00:16:10,260
+as easily popped out naturally from your own explorations.
+
+233
+00:16:12,380 --> 00:16:16,108
+And before you go, it would feel wrong not to give the people who supported
+
+234
+00:16:16,108 --> 00:16:18,414
+this series on Patreon a well-deserved thanks,
+
+235
+00:16:18,414 --> 00:16:22,339
+both for their financial backing as well as for the suggestions they gave while
+
+236
+00:16:22,339 --> 00:16:23,860
+the series was being developed.
+
+237
+00:16:24,700 --> 00:16:27,936
+You see, supporters got early access to the videos as I made them,
+
+238
+00:16:27,936 --> 00:16:31,560
+and they'll continue to get early access for future essence-of type series.
+
+239
+00:16:32,140 --> 00:16:36,240
+And as a thanks to the community, I keep ads off of new videos for their first month.
+
+240
+00:16:37,020 --> 00:16:40,510
+I'm still astounded that I can spend time working on videos like these,
+
+241
+00:16:40,510 --> 00:16:43,420
+and in a very direct way, you are the one to thank for that.

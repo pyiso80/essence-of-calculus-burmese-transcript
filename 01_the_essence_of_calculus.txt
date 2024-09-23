@@ -1,6 +1,6 @@
 0:3
 "The art of doing mathematics is finding that special case that contains all the germs of generality" - David Hilbert
-သင်္ချာပြုခြင်း အနုပညာဆိုတာ generality (ယေဘုယျကျခြင်း) ၏ ဗီဇအားလုံး ခြုံငုံပါဝင်တဲ့ special case (အထူးကိစ္စ) ကို ရှာဖွေဖော်ထုတ်ခြင်း ဖြစ်တယ် - David Hilbert
+သင်္ချာပြုခြင်း အနုပညာဟူသည် generality (ယေဘုယျကျခြင်း) ၏ ဗီဇအားလုံး ခြုံငုံပါဝင်သည့် special case (အထူးကိစ္စ) ကို ရှာဖွေဖော်ထုတ်ခြင်း ဖြစ်၏ - David Hilbert
 
 0:14
 Hey everyone, Grant here.
@@ -8,30 +8,30 @@ Hey everyone, Grant here.
 
 0:16
 This is the first video in a series on the essence of calculus,
-ဒီဟာက calculus ရဲ့ အနှစ်သာရ အကြောင်း ဆီးရီးထဲက ပထမဆုံး ဗွီဒီယိုပါ
+ဒါက calculus ရဲ့ အနှစ်သာရ အကြောင်း ဆီးရီးထဲက ပထမဆုံး ဗွီဒီယိုပါ
 
 0:19
 and I'll be publishing the following videos once per day for the next 10 days.
-နောက်ပြီးတော့... ငါ အောက်ပါ ဗွီဒီယိုတွေကို တစ်ရက် တစ်ခုနှုန်းနဲ့ လာမဲ့ ၁၀ ရက်ဆက် တင်ပေးသွားမှာပါ
+နောက်ပြီးတော့... ကျွန်တော် အောက်ပါ ဗွီဒီယိုတွေကို တစ်ရက် တစ်ခုနှုန်းနဲ့ လာမဲ့ ၁၀ ရက်ဆက် တင်ပေးသွားမှာပါ
 
 0:24
 The goal here, as the name suggests, is to really gets
-ခေါင်းစဉ်မှာ ပြောတဲ့အတိုင်း၊ ဒီကိစ္စမှာ အဓိက ရည်ရွယ်တာက... 
+ရည်ရွယ်ချက်ကတော့...ခေါင်းစဉ်မှာ ပြောတဲ့အတိုင်း... 
 0:26
 the heart of the subject out in one binge-watchable set.
-တစ်ထိုင်တည်း ကြည့်လို့ရတဲ့ အတွဲလိုက်ကနေ ဘာသာရပ်ရဲ့ အနှစ်သာရကို တကယ့်ကို နားလည်သွားဖို့ပါပဲ
+တစ်ထိုင်တည်း ကြည့်လို့ရတဲ့ တစ်ဆက်လုံးကနေ ဘာသာရပ်ရဲ့ အနှစ်သာရကို တကယ့်ကို နားလည်သွားဖို့ပါပဲ
 
 0:30
 But with a topic that's as broad as calculus, there's a lot of things that can mean,
-ဒါပေမဲ့... calculus လို ကျယ်ပြန့်လှတဲ့ ခေါင်းစဉ်မျိုးအတွက်၊ ငါ ဘာကို ဆိုလိုတာလဲက အမျိုးမျိုး အဓိပ္ပါယ်ပေါက်သွားနိုင်တာပေါ့
+ဒါပေမဲ့... calculus လို ကျယ်ပြန့်လှတဲ့ ခေါင်းစဉ်မျိုးအတွက်၊ ကျွန်တော် ဘာကို ဆိုလိုတာလဲက အမျိုးမျိုး အဓိပ္ပါယ်ပေါက်သွားနိုင်တာပေါ့
 
 0:34
 so here's what I have in mind specifically.
-ဒါကြောင့်...ငါ့စိတ်ထဲမှာ အထူးတလည် ရှိတဲ့ဟာကို ဒီမှာငါပြောမယ် 
+ဒါကြောင့်...ကျွန်တော့်စိတ်ထဲမှာ အထူးတလည် ရှိတဲ့ဟာကို ဒီမှာပြောပါမယ် 
 
 0:36
 Calculus has a lot of rules and formulas which
-Calculus မှာ အသေမှတ်ထားရမဲ့ အရာတွေအနေနဲ့ မကြာခဏဆိုသလို ပေးကြတဲ့ စည်းမျဉ်းတွေနဲ့ ဖော်မြူလာတွေ အရမ်းများတယ်
+Calculus မှာ အသေမှတ်ထားရမဲ့ အရာတွေအဖြစ် မကြာခဏဆိုသလို ပေးကြတဲ့ စည်းမျဉ်းတွေနဲ့ ဖော်မြူလာတွေ သိပ်ကိုများတယ်
 0:39
 are often presented as things to be memorized.
 
@@ -41,7 +41,7 @@ Lots of derivative formulas, the product rule, the chain rule,
 
 0:45
 implicit differentiation, the fact that integrals and derivatives are opposite,
-implicit differentiation, integrals နဲ့ derivatives က ပြောင်းပြန်ဆိုတဲ့အချက် 
+implicit differentiation, “integrals နဲ့ derivatives က ပြောင်းပြန်ဆိုတဲ့အချက်” 
 
 0:50
 Taylor series, just a lot of things like that.
@@ -49,7 +49,7 @@ Taylor series... အဲလိုမျိုးဟာတွေ အများ�
 
 0:52
 And my goal is for you to come away feeling like
-ငါ့ရဲ့ ပန်းတိုင်ကတော့ calculus ကို နင်ကိုယ်တိုင် တီထွင်နိုင်ခဲ့တာ ဖြစ်နိုင်ပါလားဆိုတဲ့ ခံစားချက်မျိုး နင့်အတွက် ရသွားစေချင်တာ
+ပြီးတော့... ကျွန်တော့် ပန်းတိုင်က calculus ကို သင်ကိုယ်တိုင် တီထွင်နိုင်ခဲ့တာ ဖြစ်နိုင်ပါလားဆိုတဲ့ ခံစားချက်မျိုး သင့်အတွက် ရသွားစေချင်တာ
 0:55
 you could have invented calculus yourself.
 
@@ -65,92 +65,173 @@ Inventing math is no joke, and there is a difference between being
 သင်္ချာထွင်တာ ဟာသမဟုတ်ဘူးနော်၊ ပြီးတော့ တစ်စုံတစ်ခု ဘာကြောင့် မှန်ရပါတယ်လို့ ကိုယ့်ကို ပြောတာနဲ့ အဲဒီဟာကို ကိုယ်တိုင် အစကနေ စဖော်ထုတ်တာရယ် ကွာခြားချက် ရှိပါတယ်
 1:10
 told why something's true, and actually generating it from scratch.
+
+
 1:14
 But at all points, I want you to think to yourself, if you were an early mathematician,
+ဒါပေမဲ့ နေရာတိုင်းမှာ၊ 
+ကျွန်တော် သင့်ကိုယ်သင် စဉ်းစားကြည့်စေချင်တာက... သင်သာ အစောပိုင်းကာလ သင်္ချာပညာရှင် တစ်ယောက်ဖြစ်ခဲ့ရင်
 1:19
 pondering these ideas and drawing out the right diagrams,
+ဒီအိုင်ဒီယာတွေကို စဉ်းစားကြည့်ရင်း၊ မှန်ကန်တဲ့ ပုံတွေ ဆွဲကြည့်ရင်း
+
 1:22
 does it feel reasonable that you could have stumbled across these truths yourself?
+သင်ကိုယ်တိုင် အဲဒီလို အမှန်တရားတွေကို အမှတ်မထင် တွေ့ရှိခဲ့နိုင်တယ်ဆိုတာ ကျိုးကြောင်းညီညွတ်တယ်လို့ ခံစားရမလား? 
 1:26
 In this initial video, I want to show how you might stumble into the core ideas of
+ဒီဗွီဒီယိုမှာတော့  calculus ရဲ့ ပင်မအိုင်ဒီယာတွေကို သင်ဘယ်လိုများ အမှတ်မထင် တွေ့ရှိခဲ့နိုင်ကြောင်း ကျွန်တော် ပြချင်တာ
+
 1:31
 calculus by thinking very deeply about one specific bit of geometry, the area of a circle.
+ဂျီဩမေတြီရဲ့ သီးခြား အစိတ်အပိုင်းလေး တစ်ခုဖြစ်တဲ့ စက်ဝိုင်းဧရိယာအကြောင်း နက်နက်ရှိုင်းရှိုင်း စဉ်းစားကြည့်ခြင်းအားဖြင့်
+
+
 1:37
 Maybe you know that this is pi times its radius squared, but why?
+ပိုင်ကို ၎င်း(စက်ဝိုင်း) ၏အချင်းဝက် နှစ်ထပ်ကိန်းနဲ့ မြှောက်တာ၊ ဒါပေမဲ့ ဘာကြောင့်လဲ?
+
 1:41
 Is there a nice way to think about where this formula comes from?
+ဒီဖော်မြူလာ ဘယ်လိုဖြစ်လာလဲ စဉ်းစားကြည့်ဖို့ ‌နည်းလမ်းကောင်း တစ်ခု ရှိမလား?
+
 1:45
 Well, contemplating this problem and leaving yourself open to exploring the
+ဒီပုစ္ဆာကို ဆင်ခြင်ကြည့်ရင်းနဲ့ ပေါ်ပေါက်လာတဲ့ စိတ်ဝင်စားစရာကောင်းတဲ့ စိတ်ကူးစိတ်သန်းတွေကို စူးစမ်းလေ့လာဖို့ သင့်ကိုယ်သင် 
+
 1:49
 interesting thoughts that come about can actually lead you to a glimpse of three
+integrals, derivatives နဲ့ ၎င်းတို့ဟာ ဆန့်ကျင်ဘက်ဖြစ်တယ် ဆိုတဲ့အချက် calculus ရဲ့ အယူအဆကြီး သုံးခုကို 
+
 1:53
 big ideas in calculus, integrals, derivatives, and the fact that they're opposites.
+
 1:59
 But the story starts more simply, just you and a circle, let's say with radius 3.
+ဒါပေမဲ့ ဇာတ်လမ်းက ပိုပြီး ရိုရိုးလေးနဲ့ စတာ၊ သင်နဲ့ စက်ဝိုင်းတစ်ခုပဲ၊ အချင်းဝက်က ၃ ယူနစ်ဆိုပါစို့
+
 2:05
 You're trying to figure out its area, and after going through a lot of
+သင်က ၎င်း၏ ဧရိယာကို တွက်ယူဖို့ ကြိုးစားနေတာ။  နည်းလမ်းအမျိုးမျိုးနဲ့ ပိုင်းစိတ်ပြီး အဲဒီဧရီယာရဲ့ အစိတ်အပိုင်းလေးတွေကို ပြန်စီထားဖို့ နည်းလမ်းအမျိုးမျိုးနဲ့ စာရွက်တွေ အများကြီးကုန်ပြီးသွားတော့
 2:09
 paper trying different ways to chop up and rearrange the pieces of that area,
 2:13
 many of which might lead to their own interesting observations,
+အများစုက သူ့ဟာနဲ့သူ စိတ်ဝင်စားစရာ လေ့လာတွေ့ရှိချက်တွေဆီကို ရောက်ရှိ
+
 2:16
 maybe you try out the idea of slicing up the circle into many concentric rings.
+သင်ဟာ စက်ဝိုင်းကို ဗဟိုပြု ကွင်းလေးတွေ အများကြီး ပိုင်းဖြတ်ဖို့ စိတ်ကူးကို စမ်းကြည့်တာ ဖြစ်နိုင်တယ်
+
 2:22
 This should seem promising because it respects the symmetry of the circle,
+ဒါဟာ စက်ဝိုင်းရဲ့ ‌symmetries ကို လေးစားလိုက်နာတဲ့  အတွက် အဆင်ပြေလောက်မယ် ထင်ရတယ်
 2:25
 and math has a tendency to reward you when you respect its symmetries.
+နောက်ပြီး... သင်္ချာဟာ သူ့ရဲ့ symmetries တွေကို အလေးထား လိုက်နာတဲ့အခါ သင့်ကိုလည်း ပြန်လည်ဆုချတတ်တဲ့ သဘောရှိတယ်
 2:30
 Let's take one of those rings, which has some inner radius r that's between 0 and 3.
+ အဲဒီ ကွင်းတွေထဲက အတွင်းဘက် အချင်းဝက် 0 နဲ့ 3 ကြား တစ်ခုခု ရှိတဲ့ တစ်ခုကို ယူလိုက်မယ် ဆိုပါစို့
+
 2:36
 If we can find a nice expression for the area of each ring like this one,
+ဒီလို ကွင်းတစ်ခုချင်း ဧရိယာကိုဖော်ပြတဲ့ expression ကို ကျွန်တော်တို့ ရှာနိုင်ရင်
+
 2:39
 and if we have a nice way to add them all up, it might lead
+ပြီးတော့... အဲ့ဒါတွေအားလုံးကို ပေါင်းလို့ရမဲ့ နည်းလမ်းကောင်းတစ်ခုသာ ရှိခဲ့မယ်ဆိုရင်, 
+
 2:43
 us to an understanding of the full circle's area.
+စက်ဝိုင်းတစ်ခုလုံးရဲ့ ဧရိယာကို နားလည်ခြင်းဆီ ဥ◌ီးတည်ရောက်ရှိနိုင်မှာပါ
+
 2:46
 Maybe you start by imagining straightening out this ring.
+ဒီကွင်းလေးကို တန်းသွားအောင် ဖြန့်လိုက်မဲ့ စိတ်ကူနဲ့ သင် စတင်ကောင်း စတင်မယ်
+
 2:50
 And you could try thinking through exactly what this new shape is and what its
+ပြီးတော့... သင်ဟာ အဲဒီက ရလာတဲ့ ပုံအသစ်က ဘာဖြစ်ပုံဖြစ်မလဲ စဉ်းစားကြည့်နိုင်မယ်... ပြီးတော့ သူ့
+
 2:55
 area should be, but for simplicity, let's just approximate it as a rectangle.
+ဧရိယာကရော ဘယ်လောက် ဖြစ်သင့်လဲ... ဒါပေမဲ့ ရိုးရှင်းအောင်, အဲဒါကို စတုဂံလို့ပဲ အနီးစပ်ဆုံး ယူလိုက်ရအောင်
+
 3:00
 The width of that rectangle is the circumference of the original ring,
+အဲ့ဒီ စတုဂံရဲ့ အကျယ်က နဂိုကွင်းဝိုင်းရဲ့ လုံးပါတ် (circumference) ဖြစ်တယ်
+
 3:03
 which is 2 pi times r, right?
+အဲဒါ (လုံးပါတ်) က 2 pi အမြှောက် r, မလား?
+
 3:05
 I mean, that's essentially the definition of pi.
+pi ရဲ့ အဓိပ္ပါယ်ကိုက အနှစ်ခြုပ်က အဲဒါပဲလို့ ဆိုလိုချင်တာ
+
 3:08
 And its thickness?
+ပြီးတော့... သူ့ရဲ့ အထူကရော?
+
 3:10
 Well, that depends on how finely you chopped up the circle in the first place,
+အဲဒါ (အထူ) က စကတည်းက စက်ဝိုင်းကို မင်းဘယ်လောက်ထိ ခပ်စိပ်စိပ်ပိုင်းမလဲပေါ် မူတည်တာပေါ့
+
 3:14
 which was kind of arbitrary.
+ဒါက စိတ်ကြိုက် ပိုင်းလို့ရပါတယ်
+
 3:16
 In the spirit of using what will come to be standard calculus notation,
+Calculus ရဲ့ စံသုံး သင်္ကေတ ဖြစ်လာမဲ့ဟာကို 
+
 3:20
 let's call that thickness dr for a tiny difference in the radius from one ring to
+ကွင်းဝိုင်းတစ်ခုနဲ့ ကပ်ရက်နောက်တစ်ခုရဲ့ အချင်းဝက် ခြားနားချက် ဖြစ်တဲ့ အဲ့ဒီ အထူကို dr လို့ ခေါ်ကြရအောင်
+
 3:24
 the next.
 3:25
+
 Maybe you think of it as something like 0.1.
+အဲဒါကို 0.1 လောက်ဖြစ်မယ် သင်စဉ်းစားချင် စဉ်းစားမယ်
+
 3:28
 So approximating this unwrapped ring as a thin rectangle,
+ဖြန့်လိုက်တဲ့ ကွင်းဝိုင်းကို စတုဂံပါးပါးလေးအဖြစ် အနီးဆုံးယူမယ်ဆိုရင်
+
 3:32
 its area is 2 pi times r, the radius, times dr, the little thickness.
+သူ့ ဧရီယာက 2 pi အမြှောက် r (အချင်းဝက်) အမြှောက် dr (အထူနည်းနည်းလေး)
+
 3:38
 And even though that's not perfect, for smaller and smaller choices of dr,
+လုံးဝ အတိအကျကြီး မဟုတ်ရင်တောင် သေးသထက် သေးလာတဲ့ dr ပမာဏ အတွက်ဆိုရင်
+
 3:42
 this is actually going to be a better and better approximation for that area,
+ဒါဟာ စက်ဝိုင်းရဲ့ ဧရီယာအစစ်အမှန်အတွက် ကောင်းသည်ထက်ကောင်းလာတဲ့ အနီးစပ်ဆုံးယူတာ ဖြစ်လာမှာပါ
+
 3:46
 since the top and the bottom sides of this shape are going to get closer and closer to
+ဘာကြောင့်လဲဆိုတော့ ဒီပုံရဲ့ အပေါ်အနေားနဲ့ အောက်အနား ကပ်သည်ထက်ကပ်လာပြီး 
+
 3:51
 being exactly the same length.
+အလျားတူတူဖြစ်သွားမှာမို့လို့
+
 3:53
 So let's just move forward with this approximation,
+ဒီတော့ အခု အနီးစပ်ဆုံးယူနည်းနဲ့ပဲ ရှေ့ဆက်ကြရအောင်
+
 3:55
 keeping in the back of our minds that it's slightly wrong,
+ပါးပါးလေး မှားနေတယ်ဆိုတာကိုလည်း စိတ်ထဲမှာ မှတ်ယူထားမယ်
+
 3:58
 but it's going to become more accurate for smaller and smaller choices of dr.
+ဒါပေမဲ့ သေးသည်ထက်သေးတဲ့ dr ရွေးချယ်စရာတွေအတွက် ပိုပိုပြီးတိကျလာမယ်
+
 4:03
 That is, if we slice up the circle into thinner and thinner rings.
 4:07
