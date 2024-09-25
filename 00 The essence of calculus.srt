@@ -488,117 +488,111 @@ calculus ဆိုတာ ဘယ်လိုမျိုးလဲ ထိထိမ
 
 123
 00:08:19,000 --> 00:08:23,533
-And because of that, you can conclude that the answer to the original question,
-အဲဒီ့အတွက်ကြောင့်, မူလ မေးခွန်းရဲ့ အဖြေကို 
+အဲဒီ့အတွက်ကြောင့်, မူလမေးခွန်း (စက်ဝိုင်းဧရိယာ) ရဲ့ အဖြေကို သင် အခုလို ‌ကောက်ချက်ချနိုင်တယ်
 
 124
 00:08:23,533 --> 00:08:28,520
-in full unapproximated precision, is exactly the same as the area underneath this graph.
-အနီးစပ်ဆုံး မဟုတ်ဘဲ လုံးဝတိကျ, ဒီဂရပ်ဖ်ရဲ့ အောက်မှာရှိတဲ့ ဧရီယာ ဖြစ်တယ်
+အနီးစပ်ဆုံး မဟုတ်ဘဲ လုံးဝအတိကျဆိုရင် (စက်ဝိုင်းဧရိယာဟာ) ဒီဂရပ်ဖ်ရဲ့ အောက်မှာရှိတဲ့ ဧရီယာနဲ့ လုံးဝကို အတူတူဖြစ်တယ်
 
 125
 00:08:30,860 --> 00:08:35,075
-A lot of other hard problems in math and science can be broken down
+အခြား ခက်ခဲတဲ့ သင်္ချာ နဲ့ သိပ္ပံ ပြဿနာ အများစုကိုလည်း (အခုတွေ့ခဲ့သလိုပဲ သေးသေးလေးတွေ) စိတ်ပိုင်းပြီးတော့
 
 126
 00:08:35,075 --> 00:08:38,422
-and approximated as the sum of many small quantities,
+များစွာသော ပမာဏ သေးသေးလေးတွေရဲ့ ပေါင်းလဒ်အဖြစ် အနီးစပ်ဆုံးယူနိုင်တယ်
 
 127
 00:08:38,422 --> 00:08:43,940
-like figuring out how far a car has traveled based on its velocity at each point in time.
+ကားတစ်စီး ဘယ်လောက် အကွာဝေး သွားခဲ့ပြီးလဲကို အချိန် တစ်မှတ် တစ်မှတ်ချင်းမှာရှိတဲ့
+သူ့ရဲ့ velocity ပေါ်မူတည်ပြီး  တွက်ချက်တာလဲ ဒီသဘောပဲ
+
 
 128
 00:08:44,760 --> 00:08:48,823
-In a case like that, you might range through many different points in time,
+အခုလို ကိစ္စမှာ, သင်ဟာ မတူညီတဲ့ အချိန် အမှတ်တွေ အများကြီးကို စူးစမ်းကြည့်နိုင်တယ်
 
 129
 00:08:48,823 --> 00:08:53,314
-and at each one multiply the velocity at that time times a tiny change in time, dt,
+ပြီးတော့, (အမှတ်) တစ်ခုစီချင်းအတွက် “အဲ့ဒီအချိန်မှာ ရှိတဲ့ velocity” 
+အမြှောက် “အချိန်ကွာဟချက် သေးသေးလေး (dt)”
 
 130
-00:08:53,314 --> 00:08:57,912
-which would give the corresponding little bit of distance traveled during that little
-
-131
-00:08:57,912 --> 00:08:58,180
-time.
+00:08:53,314 --> 00:08:58,180
+ဒီကနေမှ အဲဒီအချိန် တိုတိုလေးအတွင်း သွားခဲ့တဲ့ မဆိုစလောက် အကွာဝေးလေးကို ရရှိမယ်
 
 132
 00:08:59,260 --> 00:09:03,210
-I'll talk through the details of examples like this later in the series,
+အခု ဆီးရီးနောက်ပိုင်းမှာတော့ ဒီလိုမျိုးဥပမာတွေနဲ့ ပါတ်သက်ပြီး အသေးစိတ် ဖော်ပြပေးသွားမှာပါ
 
 133
-00:09:03,210 --> 00:09:07,431
-but at a high level many of these types of problems turn out to be equivalent
+00:09:03,210 --> 00:09:05,500
+သို့ပေမဲ့ အပေါ်ယံမှာ, ဒီလို ပြဿနာမျိုးတွေ အများစုက 
 
 134
-00:09:07,431 --> 00:09:12,140
-to finding the area under some graph, in much the same way that our circle problem did.
+00:09:05,500 --> 00:09:12,140
+ဂရပ်ဖ်တစ်ခုခု အောက်က ဧရိယာကို ရှာတာနဲ့ သဘောတရားတူ ဖြစ်နေလေ့ရှိတယ်။
+ငါတို့ရဲ့ စက်ဝိုင်းပုစ္ဆာမှာ လုပ်ခဲ့သလိုမျိုးနဲ့ အများကြီးကို တူတာ။
 
 135
 00:09:13,200 --> 00:09:16,201
-This happens whenever the quantities you're adding up,
+သင် ပမာဏသေးသေးလေးတွေကို ပေါင်းတဲ့အခါတိုင်းမှာ ဒီတိုင်းပဲဖြစ်လေ့ ရှိတယ်
 
 136
 00:09:16,201 --> 00:09:19,093
-the one whose sum approximates the original problem,
+သူတို့ရဲ့ ပေါင်းလဒ်က မူလပြဿနာ (ရဲ့အဖြေ) နဲ့ အနီးစပ်ဆုံးရှာပေးတယ်။ 
 
 137
 00:09:19,093 --> 00:09:23,240
-can be thought of as the areas of many thin rectangles sitting side by side.
+အဲဒီပေါင်းလဒ်က ဘေးချင်းကပ် ရပ်နေတဲ့ စတုဂံပါးပါးလေးတွေ အများကြီးရဲ့ 
+ဧရိယာ ပေါင်းလဒ်အနေနဲ့ ယူဆနိုင်တယ်... အခုလိုမျိုးပေါ့
 
 138
-00:09:24,640 --> 00:09:29,842
-If finer and finer approximations of the original problem correspond to thinner and
+00:09:24,640 --> 00:09:28,842
+တကယ်လို့...ကောင်းသထက်ကောင်းတဲ့ မူလပြဿနာရဲ့ အနီးစပ်ဆုံး (ယူခြင်း) တွေဟာ, 
 
 139
-00:09:29,842 --> 00:09:35,168
-thinner rings, then the original problem is equivalent to finding the area under some
-
-140
-00:09:35,168 --> 00:09:35,540
-graph.
+00:09:28,842 --> 00:09:35,540
+ပါးသည်ထက်ပါးလာတဲ့ ကွင်းဝိုင်းလေးတွေနဲ့ ဆက်စပ်နေတယ်ဆိုရင်, 
+မူလပြဿနာဟာ ဂရပ်ဖ်တစ်ခုအောက်မှာ ရှိတဲ့ ဧရိယာကို ရှာတာနဲ့ တူတူဖြစ်ရပါမယ်။
 
 141
 00:09:36,600 --> 00:09:40,480
-Again, this is an idea we'll see in more detail later in the series,
+တစ်ခါထပ်ပြောပါ့မယ်, ဒါက ဆီးရီးနောက်ပိုင်းမှာ ပိုပြီး အသေးစိတ် တွေ့ရမဲ့ သဘောတရားပါ
 
 142
 00:09:40,480 --> 00:09:43,180
-so don't worry if it's not 100% clear right now.
+ဆိုတော့... အခုလက်ရှိ ရာနှုန်းပြည့် မရှင်းသေးရင်လည်း စိတ်မပူနဲ့
 
 143
 00:09:43,780 --> 00:09:47,207
-The point now is that you, as the mathematician having just
+အဓိက အခုပြောချင်တာက, သင်ဟာ သင်္ချာပညာရှင် တစ်ယောက်အနေနဲ့ 
 
 144
 00:09:47,207 --> 00:09:50,635
-solved a problem by reframing it as the area under a graph,
+ပုစ္ဆာတစ်ခုကို ဂရပ်ဖ်တစ်ခုအောက်ရှိ ဧရိယာအဖြစ် ပြောင်းလဲဖော်ပြပြီး ဖြေရှင်းပြီးမှာပဲ  
 
 145
 00:09:50,635 --> 00:09:54,520
-might start thinking about how to find the areas under other graphs.
+အခြားသော ဂရပ်ဖ်တွေအောက်ရှိ ဧရိယာတွေကိုရော ဘယ်လိုရှာမလဲ စတင်တွေးမိ နေလောက်ပြီပေါ့
 
 146
 00:09:55,640 --> 00:10:00,372
-We were lucky in the circle problem that the relevant area turned out to be a triangle,
+ငါတို့ ကံကောင်းခဲ့တာက စက်ဝိုင်းပုစ္ဆာမှာတော့ သက်ဆိုင်ရာ ဧရိယာက တြိဂံတစ်ခု ဖြစ်နေတယ်
 
 147
 00:10:00,372 --> 00:10:03,760
-but imagine instead something like a parabola, the graph of x2.
+သို့ပေမဲ့, အဲ့ဒီ့အစား,  x နှစ်ထပ်ရဲ့ ဂရပ်ဖ် parabola တစ်ခုလိုဟာမျိုးကို စိတ်ကူးကြည့်ပါ
 
 148
-00:10:04,760 --> 00:10:08,077
-What's the area underneath that curve, say between
-
-149
-00:10:08,077 --> 00:10:10,680
-the values of x equals 0 and x equals 3?
+00:10:04,760 --> 00:10:10,680
+အဲဒီ မျဉ်းကွေး (curve) အောက်က ဧရိယာက ဘာဖြစ်မလဲ, 
+x တန်ဖိုး 0 ညီတဲ့၊ x တန်ဖိုး 3 နဲ့ညီတဲ့ ကြား (ဂရပ်ဖ်အောက် ဧရိယာ)  ဆိုပါစို့ 
 
 150
 00:10:12,080 --> 00:10:14,760
-Well, it's hard to think about, right?
+ဒါကျတော့ စဉ်းစားဖို့ ခက်သွားပြီလေ, ဟုတ်တယ် မလား?
+
 
 151
 00:10:15,220 --> 00:10:18,020
