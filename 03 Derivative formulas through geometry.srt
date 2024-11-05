@@ -1,686 +1,700 @@
 1
 00:00:12,140 --> 00:00:16,415
-Now that we've seen what a derivative means and what it has to do with rates of change,
+အခု derivative အဓိပ္ပါယ်နဲ့ ၎င်းဟာ ပြောင်းလဲနှုန်းနဲ့ ဘယ်လိုပါတ်သက်နေလဲ သိပြီဆိုတော့ 
 
 2
 00:00:16,415 --> 00:00:19,380
-our next step is to learn how to actually compute these guys.
+နောက်တစ်ဆင့်က အဲဒီကောင်တွေကို တကယ် ဘယ်လိုတွက်ချက်မလဲ 
+ဆက်လက်လေ့လာကြရမှာ ဖြစ်တယ်
 
 3
 00:00:19,840 --> 00:00:22,939
-As in, if I give you some kind of function with an explicit formula,
+ဥပမာ... တိတိကျကျ ဖော်မြူလာတစ်ခုနဲ့ ဖန်ရှင်တစ်ခုကို ပေးထားရင်
+
 
 4
 00:00:22,939 --> 00:00:26,040
-you'd want to be able to find what the formula for its derivative is.
+အဲ့ဒီ သူ့ derivative ရဲ့ ဖော်မြူလာက ဘာဖြစ်မလဲ ရှာလို့ရချင်တယ်
 
 5
-00:00:26,700 --> 00:00:30,341
-Maybe it's obvious, but I think it's worth stating explicitly why this
+00:00:26,700 --> 00:00:29,300
+ဒါဟာသိသာကောင်း သိသာပါလိမ့်မယ်... 
+သို့ပေမဲ့ အောက်ပါတို့ကို သတ်သတ်သီးခြားဖော်ပြသင့်တယ်လို့ ကျွန်တော် ထင်ပါတယ်။
 
 6
-00:00:30,341 --> 00:00:34,085
-is an important thing to be able to do, why much of a calculus student's
+00:00:29,300 --> 00:00:34,085
+ဘာကြောင့် ဒီလိုလုပ်နိုင်ဖို့ အရေးပါရတာလဲ? ဘာ့ကြောင့် ကျောင်းသားတွေရဲ့ အချိန်အတော်များများက
 
 7
-00:00:34,085 --> 00:00:37,470
-time ends up going towards grappling with derivatives of abstract
-
-8
-00:00:37,470 --> 00:00:41,060
-functions rather than thinking about concrete rate of change problems.
+00:00:34,085 --> 00:00:41,060
+အကောင်အထည်နဲ့ ပြလို့ရတဲ့ ပြောင်းလဲနှုန်း problem တွေအကြောင်း စဉ်းစားရတာထက်
+ယေဘုယျ သင်္ချာဖန်ရှင်တွေရဲ့ derivative တွေနဲ့ လုံးထွေးရင်း ကုန်ဆုံးရတာလဲ
 
 9
-00:00:42,220 --> 00:00:45,909
-It's because a lot of real-world phenomena, the sort of things that
+00:00:41,060 --> 00:00:47,500
+ဒါဘာကြောင့်လဲဆိုတော့ ကျွန်တော်တို့ calculus အသုံးပြုပြီး ဆန်းစစ်လေ့လာလိုတဲ့ 
+တကယ့်လက်တွေ့ ဖြစ်ရပ်တွေဟာ
 
 10
-00:00:45,909 --> 00:00:49,544
-we want to use calculus to analyze, are modeled using polynomials,
+00:00:47,500 -->  00:00:53,560
+polynomials တွေ၊ trigonometric ဖန်ရင်တွေ၊ exponentials တွေ (သို့) အဲဒီလို အခြား
+pure function တွေအသုံးပြုပြီး သင်္ချာပုံစံဖြင့် အနီးစပ်ဆုံး ဖော်ပြနိုင်ပါတယ်
 
-11
-00:00:49,544 --> 00:00:53,560
-trigonometric functions, exponentials, and other pure functions like that.
 
 12
-00:00:53,980 --> 00:00:58,285
-So if you build up some fluency with the ideas of rates of change for those kinds of
+00:00:53,560 --> 00:00:59,500
+ဒါကြောင့် အဲဒီလို သင်္ချာစစ်စစ် ယေဘုယျ ဖန်ရှင်တွေရဲ့ “ပြောင်းလဲနှုန်း” နဲ့ဆိုင်တဲ့ အယူအဆတွေကို
+အတိုင်းအတာတစ်ခုထိ ကျွမ်းကျင်အောင် သင်တည်ဆောက်ယူရပါမယ်
 
 13
-00:00:58,285 --> 00:01:02,642
-pure abstract functions, it gives you a language to more readily talk about the rates
-
-14
-00:01:02,642 --> 00:01:07,100
-at which things change in concrete situations that you might be using calculus to model.
+00:00:59,500 --> 00:01:07,920 
+ဒါမှလည်း... calculus အသုံးပြု ဖော်ပြလိုတဲ့ တကယ့်လက်တွေ့ အခြေအနေတွေရဲ့ ပြောင်းလဲနှုန်းအကြောင်း 
+သင် ပို၍လွယ်လွယ်ကူကူ ပြောဆိုနိုင်ဖို့ ဘာသာစကားတစ်ခု သင့်မှာ ရှိမှာပါ
 
 15
 00:01:07,920 --> 00:01:12,141
-But it is way too easy for this process to feel like just memorizing a list of rules,
+သို့ပေမဲ့ ဒီလိုလုပ်တာဟာ rule တွေ အသေပဲ ကျက်မှတ်နေရသလို ခံစားချက်မျိုးဖြစ်ဖို့ သိပ်ကို
+အလားအလာများပါတယ်
 
 16
-00:01:12,141 --> 00:01:16,166
-and if that happens, if you get that feeling, it's also easy to lose sight of the
+00:01:12,141 --> 00:01:16,950
+အဲဒီလို ဖြစ်ရင်... အဲ့သလို သင်ခံစားမိရင်တော့... အဓိကအချက်ကို မမြင်နိုင်
+ဖြစ်ဖို့လည်းလွယ်တယ်
+
 
 17
-00:01:16,166 --> 00:01:20,240
-fact that derivatives are fundamentally about just looking at tiny changes to some
+00:01:16,950 --> 00:01:24,780
+derivative ဆိုတာ အခြေခံအနှစ်သာရအားဖြင့် “တစ်စုံတစ်ရာ ပမာဏ ပြောင်းလဲမှု သေးသေးလေးတစ်ခုရယ်”...
+အဲသဟာက “အခြားပမာဏမှာ ဖြစ်ပေါ်စေတဲ့ ပြောင်းလဲမှု သေးသေးလေးရယ်” ဘယ်လိုဆက်စပ်နေလဲ လေ့လာခြင်းပါပဲ
 
-18
-00:01:20,240 --> 00:01:24,020
-quantity and how that relates to a resulting tiny change in another quantity.
 
 19
-00:01:24,780 --> 00:01:28,732
-So in this video and in the next one, my aim is to show you how you can think
+00:01:24,780 --> 00:01:29,300
+ဒီတော့ အခု video နဲ့ လာမဲ့ နောက်တစ်ခုအတွက်... ကျွန်တော် ရည်ရွယ်ထားတာက
+အဲ့ဒီလို rules တွေထဲက အချို့ကို ဘယ်လို စိတ်ကူးပုံဖော်ကြည့်ရမလဲ ပြပေးဖို့ပါ 
 
-20
-00:01:28,732 --> 00:01:31,672
-about a few of these rules intuitively and geometrically,
+
+00:01:29,300 --> 00:01:31,672
+လွယ်လွယ်ကူကူ နားလည်နိုင်ရမယ်... ဂျီဩမေတြီနည်းနဲ့လည်း ဖြစ်မယ်
+
+
+
 
 21
-00:01:31,672 --> 00:01:35,675
-and I really want to encourage you to never forget that tiny nudges are at the
+00:01:31,672 --> 00:01:36,740
+ပြီးတော့... derivative ရဲ့ အရေးကြီးဆုံး အယူအဆဟာ သေးငယ်လှတဲ့ ကွာဟချက်လေးတွေဆိုတာ
+ဘယ်တော့မှ မမေ့ဖို့ အထူးတလည် တိုက်တွန်းလိုပါတယ်
 
-22
-00:01:35,675 --> 00:01:36,740
-heart of derivatives.
 
 23
 00:01:37,920 --> 00:01:41,280
-Let's start with a simple function like f of x equals x squared.
+ရိုးရှင်းတဲ့ ဖန်ရှင်လေးတစ်ခုနဲ့ စကြရအောင်... “f(x) = x နှစ်ထပ်” လိုမျိုးပေါ့ 
 
 24
 00:01:41,620 --> 00:01:42,740
-What if I asked you its derivative?
+သူ့ရဲ့ derivative ကိုမေးရင် ဘာဖြစ်မလဲ?
 
 25
 00:01:43,520 --> 00:01:47,038
-That is, if you were to look at some value x, like x equals 2,
+ဆိုလိုတာက, x တန်ဖိုးတစ်ခုခုကို ကြည့်မယ်, x = 2 ဆိုပါစို့
 
 26
 00:01:47,038 --> 00:01:50,333
-and compare it to a value slightly bigger, just dx bigger,
+သူနဲ့ သူ့ထက် နည်းနည်းလေးပဲပိုကြီးတဲ့ တန်ဖိုး နှိုင်းယှဉ်မယ် (dx လေးပဲ ပိုကြီးတယ်)
 
 27
-00:01:50,333 --> 00:01:53,740
-what's the corresponding change in the value of the function?
+00:01:50,333 --> 00:01:53,740 
+ဖန်ရှင်ရဲ့ သက်ဆိုက်ရာ output တန်ဖိုးအသီးသီး ကွာဟချက်က ဘာဖြစ်မလဲ?
 
 28
 00:01:54,260 --> 00:01:54,700
-dF.
+(တစ်နည်းအားဖြင့်) df က ဘာဖြစ်မလဲ?
 
 29
-00:01:55,620 --> 00:01:58,693
-And in particular, what's dF divided by dx, the rate
+00:01:55,620 --> 00:02:01,940
+အထူးသဖြင့်... df အစား dx က ဘာဖြစ်မလဲ?
+(တစ်နည်းအားဖြင့်) x တစ်ယူနစ် ပြောင်းလဲရင် “ဖန်ရှင်တန်ဖိုး ပြောင်းလဲနှုန်း” ဘာဖြစ်မလဲ?
 
-30
-00:01:58,693 --> 00:02:01,940
-at which this function is changing per unit change in x.
+
 
 31
-00:02:03,160 --> 00:02:07,249
-As a first step for intuition, we know that you can think of this ratio
+00:02:03,160 --> 00:02:10,883
+ဒါကို ခံစားသိမြင်ဖို့ ပထမတစ်ဆင့်အနေနဲ့... ဒီ df/dx အချိုးကို x နှစ်ထပ်ရဲ့ ဂရပ်ဖ်ပေါ်ရှိ 
+tangent မျဉ်းတစ်ခုရဲ့ slope အဖြစ် စဉ်းစားနိုင်တယ် ဆိုတာ ကျွန်တော်တို့ သိထားတယ်
 
-32
-00:02:07,249 --> 00:02:10,883
-dF dx as the slope of a tangent line to the graph of x squared,
+
 
 33
 00:02:10,883 --> 00:02:15,200
-and from that you can see that the slope generally increases as x increases.
+နောက်ပြီး အဲဒီကနေမှ... x တိုးလာတဲ့အခါ slope ကလည်း ယေဘုယျအားဖြင့် များလာတာ တွေ့ရမှာပါ
 
 34
 00:02:15,840 --> 00:02:18,400
-At zero, the tangent line is flat, and the slope is zero.
+သုညမှာ tangent မျဉ်းက ပြင်ညီဖြစ်တယ်, slope ဟာ သုညဖြစ်တယ်
 
 35
 00:02:19,000 --> 00:02:21,260
-At x equals 1, it's something a bit steeper.
+x က 1 နဲ့ ညီတဲ့အခါ, slope က နည်းနည်းပိုပြီး မတ်စောက်တယ်
 
 36
 00:02:22,600 --> 00:02:24,400
-At x equals 2, it's steeper still.
+x ဟာ 2 နဲ့ ညီတဲ့နေရာမှာ, slope က ပိုပြီးတောင် မတ်စောက်လာတယ်
 
 37
-00:02:25,120 --> 00:02:27,579
-But looking at graphs isn't generally the best way
-
-38
-00:02:27,579 --> 00:02:30,040
-to understand the precise formula for a derivative.
+00:02:25,120 --> 00:02:30,040
+ဒါပေမဲ့ ဂရပ်ဖ်ကို ကြည့်တာက derivative ရဲ့ ဖော်မြူလာအတိအကျကို
+နားလည်ဖို့ ယေဘုယျအားဖြင့် အကောင်းဆုံး နည်းမဟုတ်ဘူး
 
 39
 00:02:30,720 --> 00:02:34,934
-For that, it's best to take a more literal look at what x squared actually means,
+အဲဒီ့အတွက်ကြောင့်, x နှစ်ထပ်ရဲ့ ဆိုလိုရင်းအဓိပ္ပါယ်ကဘာလဲ 
+ပိုပြီးတော့ ရိုးရိုးစဉ်းစဉ်း ဒဲ့မြင့်ကြည့်တာ အကောင်းဆုံးပါပဲ
 
 40
-00:02:34,934 --> 00:02:38,840
-and in this case let's go ahead and picture a square whose side length is x.
+00:02:34,934 --> 00:02:38,840 
+အခုကိစ္စမှာ... x နှစ်ထပ်ကို စတုရန်းတစ်ခုနဲ့ မြင်ကြည့်ရအောင်။ သူ့အနား အလျားက x ဖြစ်မယ်။
+(ဧရိယာက x နှစ်ထပ် ဖြစ်မယ်)
 
 41
 00:02:39,920 --> 00:02:43,120
-If you increase x by some tiny nudge, some little dx,
+x ကို နည်းနည်းလေး ပိုရှည်အောင် dx ပမာဏသေးသေးလေး ပေါင်းလိုက်တဲ့အခါ 
 
 42
 00:02:43,120 --> 00:02:46,380
-what's the resulting change in the area of that square?
+အဲဒီ စတုရန်းမှာ ဖြစ်ပေါ်တဲ့ ဧရိယာပြောင်းလဲမှုက ဘာဖြစ်မလဲ?
 
 43
 00:02:47,720 --> 00:02:51,480
-That slight change in area is what dF means in this context.
+ခုကိစ္စမှာ df ဟာ အဲဒီ နည်းနည်းလေး ပြောင်းသွားတဲ့ ဧရိယာကို ဆိုလိုတယ်
+
 
 44
 00:02:52,020 --> 00:02:55,777
-It's the tiny increase to the value of f of x equals x squared,
+“f(x) = x squared” ၏ တန်ဖိုးတွင် တိုးလားသည့် သေးငယ်သည့် ပမာဏလေးဖြစ်တယ်
 
 45
 00:02:55,777 --> 00:02:58,420
-caused by increasing x by that tiny nudge dx.
+x ကို dx ပမာဏလေး တိုးလိုက်ခြင်းက အဲဒါကို
 
 46
 00:02:59,360 --> 00:03:03,031
-Now you can see that there's three new bits of area in this diagram,
+ပုံမှာ ဧရိယာအသစ် သေးသေးလေးသုံးခုကို တွေ့နိုင်ပါတယ်
 
 47
 00:03:03,031 --> 00:03:05,320
-two thin rectangles and a minuscule square.
+ပါးပါးရှည်ရှည် စတုဂံလေး နှစ်ခုနဲ့ စတုရန်းသေးသေးလေးတစ်ခုနဲ့ ပြထားတဲ့ဟာ
 
 48
 00:03:06,240 --> 00:03:10,106
-The two thin rectangles each have side lengths of x and dx,
+ပါးပါးရှည်ရှည် စတုဂံလေး နှစ်ခုထဲက တစ်ခုစီဟာ အနားတစ်ဖက်ချင်း အလျား x နဲ့ dx ရှိမယ် 
 
 49
 00:03:10,106 --> 00:03:13,780
-so they account for 2 times x times dx units of new area.
+ဒီတော့ သူတို့နှစ်ခုဟာ အသစ်ဧရိယာမှာ 2 အမြှောက် x အမြှောက် dx ယူနစ် ပါဝင်မယ်
 
 50
-00:03:18,240 --> 00:03:21,031
-For example, let's say x was 3 and dx was 0.01,
+00:03:14,240 --> 00:03:18,031
+ဥပမာ, x က 3 ဖြစ်ပြီး dx က 0.01 ဆိုပါစို့
 
 51
-00:03:21,031 --> 00:03:25,741
-then that new area from these two thin rectangles would be 2 times 3 times 0.01,
+00:03:18,031 --> 00:03:25,741
+ဒီ ပါးရှည်ရှည် စတုဂံလေး နှစ်ခုကနေရတဲ့ ဧရိယာက 2 အမြှောက် 3 အမြှောက် 0.01 ဖြစ်မယ်
+
 
 52
 00:03:25,741 --> 00:03:28,300
-which is 0.06, about 6 times the size of dx.
+0.06 ပေါ့, dx ရဲ့ ၆ ဆလောက်
 
 53
 00:03:29,700 --> 00:03:32,872
-That little square there has an area of dx squared,
+စတုရန်းသေးသေးလေးက ဧရိယာ dx နှစ်ထပ်ရှိမယ်
 
 54
 00:03:32,872 --> 00:03:36,960
-but you should think of that as being really tiny, negligibly tiny.
+ဒါပေမဲ့ ဒါလေးက တကယ့်ကို သေးလွန်းတယ်လို့ စဉ်းစားသင့်တယ်။ 
+လျစ်လျူရှုထားရလောက်အောင်ကို သေးလွန်းတယ်။
 
 55
-00:03:37,700 --> 00:03:41,340
-For example, if dx was 0.01, that would be only 0.0001,
+00:03:37,700 --> 00:03:43,340
+ဥပမာ, dx က 0.01 ဆိုရင် သူ့ဧရိယာက 0.0001 ပဲ ရှိမှာ
 
 56
-00:03:41,340 --> 00:03:46,086
-and keep in mind I'm drawing dx with a fair bit of width here just so we
-
-57
-00:03:46,086 --> 00:03:49,662
-can actually see it, but always remember in principle,
+00:03:43,340 --> 00:03:48,086  
+ဒီမှာတော့ dx ကို width ခပ်ထူထူလေးနဲ့ ဆွဲပြထားတာက မြင်သာအောင်လို့ဆိုတာ
+စိတ်ထဲထည့်ထားပါ
 
 58
-00:03:49,662 --> 00:03:54,993
-dx should be thought of as a truly tiny amount, and for those truly tiny amounts,
+00:03:48,086 --> 00:03:53,100
+သို့ပေမဲ့... ယေဘုယျအားဖြင့် dx ကို တကယ့်ကို သေးငယ်တဲ့ ပမာဏလေးအနေနဲ့
+စဉ်းစားသင့်တယ်ဆိုတာ အမြဲသိထားရပါ...
+
 
 59
-00:03:54,993 --> 00:03:59,674
-a good rule of thumb is that you can ignore anything that includes a dx
+00:03:53,100 --> 00:03:56,100
+အဲ့လို ပမာဏ သေးသေးလေးတွေအတွက်... 
 
 60
-00:03:59,674 --> 00:04:01,820
-raised to a power greater than 1.
+00:03:56,100 --> 00:04:01,820
+အသုံးဝင်တဲ့ ယေဘုယျ စည်းမျဉ်းကောင်းတစ်ခုက 
+dx ကို power 1 ထပ်ထက်ပိုပြီး တင်ထားတာမှန်သမျှကို ignore လုပ်နိုင်ပါတယ်
+
 
 61
-00:04:02,400 --> 00:04:05,880
-That is, a tiny change squared is a negligible change.
+00:04:02,400 --> 00:04:07,300
+ဆိုလိုတာက... ပြောင်းလဲမှု ပမာဏသေးသေးလေးကို နှစ်ထပ်တင်တာဟာ
+လျစ်လျူရှုနိုင်တဲ့ ပြောင်းလဲမှု ပမာဏလေးပဲ ဖြစ်တယ်
 
 62
-00:04:07,500 --> 00:04:13,055
-What this leaves us with is that dF is just some multiple of dx, and that multiple 2x,
+00:04:07,500 --> 00:04:11,900 
+(အဲဒီကောင်တွေ ပျောက်သွားတော့) ကျွန်တော်တို့နဲ့ ကျန်ခဲ့တာက 
+df ဟာ dx ၏ ဆတိုးကိန်း တစ်ခုသာဖြစ်တယ်။ 
 
 63
-00:04:13,055 --> 00:04:18,100
-which you could also write as dF divided by dx, is the derivative of x squared.
+00:04:11,900 --> 00:04:19,040
+အဲဒီ 2x အဆ (သို့) df/dx = 2x အဖြစ် ကျွန်တော်တို့ ရေးတဲ့အရာဟာ
+x နှစ်ထပ်ရဲ့ derivative ဖြစ်ပါတယ် 
+ 
 
 64
 00:04:19,040 --> 00:04:24,297
-For example, if you were starting at x equals 3, then as you slightly increase x,
+ဥပမာ... x က 3 နဲ့ ညီတဲ့နေရာကနေစမယ်... ပြီးတော့ x ကို နည်းနည်းလေး တိုးလိုက်တဲ့အခါ
 
 65
-00:04:24,297 --> 00:04:29,683
-the rate of change in the area per unit change in length added, dx squared over dx,
+00:04:24,297 --> 00:04:29,683 
+အလျားတစ်ယူနစ် တိုးလိုက်ရင် ဧရိယာ ဘယ်လောက်တိုးသွားမလဲ တိုင်းတာတဲ့
+ပြောင်းလဲနှုန်း (တစ်နည်း) d x squared အစား dx ဟာ
+
 
 66
 00:04:29,683 --> 00:04:34,427
-would be 2 times 3, or 6, and if instead you were starting at x equals 5,
+2 အမြှောက် 3 (သို့) 6 ဖြစ်မယ်။ တကယ်လို့ x က 5 နဲ့ ညီတဲ့နေရာက စခဲ့မယ်ဆိုရင်
 
 67
-00:04:34,427 --> 00:04:38,980
-then the rate of change would be 10 units of area per unit change in x.
+00:04:34,427 --> 00:04:41,000
+“ပြောင်းလဲနှုန်း” ဟာ x ပမာဏ တစ်ယူနစ် ပြောင်းလဲခြင်းအတွက် 10 ယူနစ် ဧရိယာ ဖြစ်မှာပါ
 
 68
-00:04:41,220 --> 00:04:45,420
-Let's go ahead and try a different simple function, f of x equals x cubed.
+00:04:41,220 --> 00:04:41,000
+ရှေ့ဆက်သွားပြီး... နောက်ထပ် ရိုးရှင်းတဲ့ အခြားဖန်ရှင်လေးတစ်ခုကို စမ်းကြည့်ရအောင်...
+f(x) = x cubed ပါ
 
 69
-00:04:45,940 --> 00:04:48,039
-This is going to be the geometric view of the stuff
+00:04:45,940 --> 00:04:51,020
+ဒီဟာက ပြီးခဲ့တဲ့ နောက်ဆုံး video မှာ algebra နည်းနဲ့ ဖော်ပြခဲ့တဲ့ဟာကို
+ဂျီဩမေတြီနည်းအရ ရှုမြင်ကြည့်တာ ဖြစ်ပါတယ်
 
-70
-00:04:48,039 --> 00:04:50,140
-that I went through algebraically in the last video.
 
 71
-00:04:51,020 --> 00:04:55,641
-What's nice here is that we can think of x cubed as the volume of an actual
+00:04:51,020 --> 00:04:56,900
+ဒီနေရာမှာ ကောင်းတဲ့အချက်က... အနားတွေအားလုံး အလျား x ပမာဏရှိတဲ့ 
+ကုဗတုံးတစ်ခုရဲ့ ထုထည်အနေနဲ့ x သုံးထပ်ကို စဉ်းစားနိုင်တယ်
 
 72
-00:04:55,641 --> 00:05:00,020
-cube whose side lengths are x, and when you increase x by a tiny nudge,
+00:04:56,900 --> 00:05:01,020
+x ကို မဆိုစလောက် ပမာဏသေးသေးလေး dx တိုးလိုက်တဲ့အခါ 
 
 73
-00:05:00,020 --> 00:05:04,520
-a tiny dx, the resulting increase in volume is what I have here in yellow.
+00:05:01,020 --> 00:05:04,520
+ရလာတဲ့ ထုထည်ကွာဟချက် ပမာဏဟာ အခုပုံထဲက အဝါနဲ့ အပိုင်းဖြစ်တယ် 
+
 
 74
-00:05:04,860 --> 00:05:08,748
-That represents all the volume in a cube with side lengths x plus dx
-
-75
-00:05:08,748 --> 00:05:12,580
-that's not already in the original cube, the one with side length x.
+00:05:04,860 --> 00:05:12,580
+ဒါဟာ အနားအလျား (x + dx) ရှိတဲ့ ကုဗတုံးနဲ့
+အနားအလျား x ရှိတဲ့ မူလကုဗတုံးတို့ရဲ့ ထုထည်ကွာဟချက် ကိုဖော်ပြတယ်   
 
 76
 00:05:13,580 --> 00:05:18,602
-It's nice to think of this new volume as broken up into multiple components,
+အခုတိုးလာတဲ့ ထုထည်အသစ်ကို အပိုင်းတွေ ခွဲကြည့်တာ ပိုအဆင်ပြေတယ်
 
 77
 00:05:18,602 --> 00:05:22,386
-but almost all of it comes from these three square faces,
+၎င်း (ထုထည်အသစ်) ရဲ့ အားလုံးနီးပါဟာ အခုပြထားတဲ့ 
+စတုရန်းပုံ မျက်နှာပြင် သုံးချပ်ကနေလာတယ်
 
 78
 00:05:22,386 --> 00:05:25,843
-or said a little more precisely, as dx approaches 0,
+နည်းနည်းပိုတိကျအောင် ပြောရင်, dx သုညကို ချဉ်းကပ်သွားတဲ့အခါ...
 
 79
-00:05:25,843 --> 00:05:30,279
-those three squares comprise a portion closer and closer to 100% of
+00:05:25,843 --> 00:05:31,780
+အဲဒီ စတုရန်းသုံးခု ထုထည်စုစုပေါင်းဟာ အဝါရောင်ထုထည်သစ်ရဲ့ ၁၀၀% နဲ့ နီးသထက်နီးလာတယ်
 
-80
-00:05:30,279 --> 00:05:31,780
-that new yellow volume.
 
 81
 00:05:33,840 --> 00:05:38,058
-Each of those thin squares has a volume of x squared times dx,
+အဲဒီ စတုရန်းပုံ အချပ်ပါးပါး တစ်ခုစီဟာ ထုထည် “x squared အမြှောက် dx” ရှိတယ်
 
 82
 00:05:38,058 --> 00:05:41,540
-the area of the face times that little thickness dx.
+မျက်နှာပြင် ဧရိယာကို အထူနည်းနည်းလေး dx နဲ့ မြှောက်တာ 
 
 83
 00:05:42,220 --> 00:05:46,260
-So in total this gives us 3x squared dx of volume change.
+သုံးချပ်ဆိုတော့ စုစုပေါင်း 3 x squared dx ထုထည်ပမာဏ ကွာဟချက်ရမယ်
 
 84
 00:05:47,300 --> 00:05:51,062
-And to be sure there are other slivers of volume here along the edges
+သေချာအောင်ပြောရရင်... အနားတွေတစ်လျှောက်က ရှည်မျောမျောအပိုင်းလေးတွေနဲ့  
 
 85
-00:05:51,062 --> 00:05:54,877
-and that tiny one in the corner, but all of that volume is going to be
+00:05:51,062 --> 00:05:54,000
+ထောင့်စွန်းနားက သေးသေးလေးတစ်ခုတို့ရဲ့ ထုထည် ကျန်ပါသေးတယ်။
+ဒါပေမဲ့ အဲ့ဒါအားလုံးရဲ့ ထုထည်က  
 
 86
-00:05:54,877 --> 00:05:58,640
-proportional to dx squared, or dx cubed, so we can safely ignore them.
+00:05:54,000 --> 00:05:59,460
+dx နှစ်ထပ် သို့ သုံးထပ်နဲ့ အချိုးကျတယ်။ ဒီတော့ သူတို့ကို ပြဿနာမရှိဘဲ လျစ်လျူရှုနိုင်တယ်
 
 87
 00:05:59,460 --> 00:06:03,466
-Again this is ultimately because they're going to be divided by dx,
+ထပ်ပြောမယ်... အဆုံးသတ်မှာ ဘာကြောင့် ဒီလိုဖြစ်ရလဲဆိုတော့ ၎င်းတို့ကို dx နဲ့ divide လုပ်မှာပဲ
 
 88
 00:06:03,466 --> 00:06:07,118
-and if there's still any dx remaining then those terms aren't
+(divide လုပ်ပြီးလို့) dx ကျန်နေသေးတယ်ဆိုရင်လည်း အဲဒီ dx ပါတဲ့ terms တွေက
 
 89
 00:06:07,118 --> 00:06:10,300
-going to survive the process of letting dx approach 0.
+dx ကို သုညဆီ ချဉ်းကပ်စေတဲ့ဖြစ်စဉ်မှာ ကျန်ရစ်ခဲ့မှာ မဟုတ်ဘူး
 
 90
 00:06:11,280 --> 00:06:14,435
-What this means is that the derivative of x cubed,
+ဒါဘာဆိုလိုလဲဆိုတော့ “x သုံးထပ်၏ derivative” (သို့)
 
 91
 00:06:14,435 --> 00:06:19,200
-the rate at which x cubed changes per unit change of x, is 3 times x squared.
+“x တန်ဖိုး တစ်ယူနစ်ပြောင်းလဲခြင်းကြောင့် x cubed တွင် ဖြစ်ပေါ်သည့် ပြောင်းလဲနှုန်း” 
+ဟာ 3 အမြှောက် x နှစ်ထပ်ဖြစ်တယ်
 
 92
-00:06:20,640 --> 00:06:25,185
-What that means in terms of graphical intuition is that the slope of
+00:06:20,640 --> 00:06:23,185
+ဒါကို ရုပ်ပုံနဲ့ မြင်သာအောင်ပြရင် ဘယ်လို အဓိပ္ပါယ်ဖြစ်မလဲဆိုတော့... 
+
 
 93
-00:06:25,185 --> 00:06:29,600
-the graph of x cubed at every single point x is exactly 3x squared.
+00:06:23,185 --> 00:06:34,080
+x cubed ဂရပ်ဖ်ရဲ့ slope ဟာ x အမှတ် တစ်ခုစီတစ်ခုစီတိုင်း အတွက် 
+3 x squared အတိအကျဖြစ်တယ်
+
 
 94
-00:06:34,080 --> 00:06:38,786
-And reasoning about that slope, it should make sense that this derivative is high on the
+00:06:34,080 --> 00:06:42,805
+ဒီ slope ကနေ ဆက်စပ်ပြီးကြည့်ရင်... derivative ဟာ ဘယ်ဘက်ခြမ်းမှာ မြင့်မယ်... 
+အဲဒီနောက် origin မှာ သုညဖြစ်သွားမယ်... အဲဒီကနေမှတစ်ခါ... ညာဘက်သွားရင် ပြန်မြင့်လာမှာဖြစ်တယ်  
 
-95
-00:06:38,786 --> 00:06:42,805
-left and then 0 at the origin and then high again as you move to the right,
 
 96
-00:06:42,805 --> 00:06:47,142
-but just thinking in terms of the graph would never have landed us on the precise
+00:06:42,805 --> 00:06:48,880 
+သို့ပေမဲ့ ဂရပ်ဖ်နဲ့ပဲ စဉ်းစားနေခြင်းဟာ... (derivative ဟာ) 3x squared ကွက်တိဖြစ်ရမယ်
+ဆိုတဲ့အဖြေဆီ ကျွန်တော်တို့ကို ဘယ်တော့မှ ရောက်ရှိစေမှာ မဟုတ်ဘူး
 
-97
-00:06:47,142 --> 00:06:48,200
-quantity 3x squared.
+
 
 98
-00:06:48,880 --> 00:06:53,060
-For that we had to take a much more direct look at what x cubed actually means.
+00:06:48,880 --> 00:06:54,260 
+အဲဒီ့အတွက် ကျွန်တော်တို့ဟာ x cubed ရဲ့ တကယ့်အဓိပ္ပါယ်ကို  
+သူ့နဂို အရင်းခံအတိုင်းဖြစ်အောင် အတတ်နိုင်ဆုံး တိုက်ရိုက် ရှုမြင်ကြည့်ခဲ့ကြတယ်
 
 99
-00:06:54,260 --> 00:06:57,561
-Now in practice you wouldn't necessarily think of the square every
+00:06:54,260 --> 00:06:59,927
+လက်တွေ့မှာတော့... x squared ရဲ့ derivative ကို ယူတဲ့အခါတိုင်း
+စတုရန်းပုံကို စဉ်းစားဖို့ လိုမှာမဟုတ်ပါဘူး...
 
-100
-00:06:57,561 --> 00:06:59,927
-time you're taking the derivative of x squared,
+
 
 101
-00:06:59,927 --> 00:07:03,278
-nor would you necessarily think of this cube whenever you're taking
-
-102
-00:07:03,278 --> 00:07:04,560
-the derivative of x cubed.
+00:06:59,927 --> 00:07:04,560
+... x cubed ရဲ့ derivative ကို ယူတဲ့အခါတိုင်းလည်း
+ကုဗတုံးကို စဉ်းစားဖို့ မလိုပါဘူး
 
 103
 00:07:04,880 --> 00:07:08,400
-Both of them fall under a pretty recognizable pattern for polynomial terms.
+နှစ်ခုလုံးက polynomial terms တွေအတွက် အတော်လေး သိသာတဲ့ pattern တစ်ခု
+အောက်မှာ   
 
 104
 00:07:09,200 --> 00:07:13,341
-The derivative of x to the fourth turns out to be 4x cubed,
+“x to the power 4” ရဲ့ derivative က 4x cubed ဖြစ်တာ တွေ့ရပါမယ်
 
 105
 00:07:13,341 --> 00:07:17,760
-the derivative of x to the fifth is 5x to the fourth, and so on.
+“x to the power 5” ရဲ့ derivative က “5x to the power 4”, စသည်ဖြင့်ပေါ့
 
 106
-00:07:18,880 --> 00:07:22,792
-Abstractly you'd write this as the derivative of x to
+00:07:18,880 --> 00:07:26,560
+ယေဘုယျအားဖြင့် မည်သည့် power n အတွက်ဖြစ်စေ “x to the power n” ရဲ့ derivative ကို 
+n အမြှောက် x to the power n minus 1 လို့ ရေးမှာပါ
 
-107
-00:07:22,792 --> 00:07:26,560
-the n for any power n is n times x to the n minus 1.
 
 108
 00:07:27,300 --> 00:07:30,560
-This right here is what's known in the business as the power rule.
+ဒီမှာပြထားတဲ့ဟာက calculus မှာ “power rule” လို့ သိကြတဲ့ ပုံသေနည်းဖြစ်တယ်
 
 109
 00:07:31,740 --> 00:07:35,913
-In practice we all quickly just get jaded and think about this symbolically as
+တကယ်တမ်းကျ ခဏလေးနေရင်... ကျွန်တော်တို့အားလုံး ဒီဟာကို  
+အထူးထွေလုပ် မနေတော့ပါဘူး။ သင်္ကေတနဲ့ပဲ စဉ်းစားလိုက်တယ်... 
 
 110
 00:07:35,913 --> 00:07:39,769
-the exponent hopping down in front, leaving behind one less than itself,
+ထပ်ကိန်းက ရှေ့ကိုခုန်ဆင်းပြီး သူ့နေရာမှာ သူ့ထက် တစ်ခုလျော့တဲ့ကောင် 
+ချန်ထားခဲ့တာလို့ မှတ်လိုက်တာပါပဲ
 
 111
-00:07:39,769 --> 00:07:44,260
-rarely pausing to think about the geometric delights that underlie these derivatives.
+00:07:39,769 --> 00:07:45,240
+derivative တွေရဲ့ အခြေခံဖြစ်တဲ့ ဂျီဩမေတြီဆိုင်ရာ ကျေနပ်နှစ်လိုဖွယ်တွေ အကြောင်း 
+ခဏလောက်ရပ် စဉ်းစားတယ်ဆိုတာ ဖြစ်တောင့်ဖြစ်ခဲပါ
 
 112
-00:07:45,240 --> 00:07:47,296
-That's the kind of thing that happens when these tend
-
-113
-00:07:47,296 --> 00:07:49,200
-to fall in the middle of much longer computations.
+00:07:45,240 --> 00:07:50,640
+အဆင့်တွေ အများကြီးပါတဲ့ အတွက်အချက်တွေ အလယ်မှာ အဲဒီလို
+သင်္ကေတမှတ်နည်းသုံးတာက အဖြစ်များတဲ့ဟာမျိုးပေါ့ 
 
 114
 00:07:50,640 --> 00:07:53,328
-But rather than tracking it all off to symbolic patterns,
+သို့ပေမဲ့ တွေ့နေကျ သင်္ကေတပုံစံတွေနဲ့ မှတ်သားထားတာထက် 
 
 115
-00:07:53,328 --> 00:07:57,360
-let's just take a moment and think about why this works for powers beyond just 2 and 3.
+00:07:53,328 --> 00:07:58,440
+2 နဲ့ 3 အပြင် အခြား ထပ်ညွှန်းတွေအတွက်လည်း ဒီအတိုင်းဘာ့ကြောင့် 
+ဆက်အလုပ်လုပ်နေလဲ ခဏစဉ်းစားကြည့်ကြရအောင်
 
 116
 00:07:58,440 --> 00:08:02,773
-When you nudge that input x, increasing it slightly to x plus dx,
+x ကို dx ပမာဏ သေးသေးလေးပေါင်းပြီး မဆိုစလောက် တိုးလိုက်တဲ့အခါ
 
 117
 00:08:02,773 --> 00:08:06,974
-working out the exact value of that nudged output would involve
+output တန်ဖိုးကရော ဘယ်လောက်လေး ကွာဟသွားမလဲ? 
+ဒါကို အတိအကျ တွက်ချက်ရင်
 
 118
-00:08:06,974 --> 00:08:10,520
-multiplying together these n separate x plus dx terms.
+00:08:06,974 --> 00:08:11,340
+အခုလို သီးခြား (x + dx) တွေ  n ခု မြှောက်တာ ပါဝင်မှာပါ 
 
 119
 00:08:11,340 --> 00:08:13,890
-The full expansion would be really complicated,
+အကုန် ဖြန့်ချလိုက်ရင် ဒါက တော်တော်ကို ရှုပ်ထွေးပါလိမ့်မယ်
 
 120
-00:08:13,890 --> 00:08:18,460
-but part of the point of derivatives is that most of that complication can be ignored.
+00:08:13,890 --> 00:08:19,280 
+သို့ပေမဲ့... derivatives ရဲ့ အားသာချက်တစ်ခုက အဲဒီလို ရှုပ်ထွေးနေတာတွေ 
+အများစုကို မေ့ထားလိုက်လို့ရတာပဲ ဖြစ်ပါတယ်
+
 
 121
 00:08:19,280 --> 00:08:22,020
-The first term in your expansion is x to the n.
+ဖြန့်လိုက်လို့ရှိရင် ပထမ term က x to the power n ဖြစ်မယ်
 
 122
 00:08:22,680 --> 00:08:25,584
-This is analogous to the area of the original square,
+ဒါက မူလ စတုရန်းပုံရဲ့ ဧရိယာနဲ့ သဘောတရားအားဖြင့် ဆင်တူတယ်
 
 123
 00:08:25,584 --> 00:08:28,920
-or the volume of the original cube from our previous examples.
+(သို့) ပြီးခဲ့တဲ့ ဥပမာက မူလ ကုဗတုံးရဲ့ volume နဲ့ တူတယ်
 
 124
-00:08:30,820 --> 00:08:36,039
-For the next terms in the expansion you can choose mostly x's with a single dx.
+00:08:30,820 --> 00:08:41,720
+ဖြန့်ထားတဲ့ထဲမှာ... နောက် term တစ်ခုအတွက်ကိုတော့...
+dx တစ်ခုပဲပါပြီး ကျန်တာအားလုံးက x တွေချည်းကို ရွေးချယ်နိုင်တယ်။
 
 125
 00:08:41,720 --> 00:08:46,804
-Since there are n different parentheticals from which you could have chosen
+သီးခြား ဝိုက်ကွင်းတစ်စုံချင်း n စုံရှိတယ်။
+dx တစ်ခုကို အဲဒီထဲက ကြိုက်ရာ တစ်စုံထဲကနေ ရွေးချယ်နိုင်တယ်။ 
+
 
 126
-00:08:46,804 --> 00:08:50,016
-that single dx, this gives us n separate terms,
+00:08:46,804 --> 00:08:53,160
+ဒီတော့ သီးခြား term အရေအတွက်လည်း n ခု ရှိရပါမယ်။
+၎င်းတို့အားလုံးမှာ x အရေအတွက်  n - 1 ခုနဲ့ dx တစ်ခု ပါဝင်ပါမယ်။
 
-127
-00:08:50,016 --> 00:08:53,160
-all of which include n minus 1 x's times a dx,
-
+ 
 128
 00:08:53,160 --> 00:08:56,640
-giving a value of x to the power n minus 1 times dx.
+ဒီကနေ x to the power n - 1 အမြှောက် dx ရမယ်
 
 129
-00:08:57,580 --> 00:09:02,820
-This is analogous to how the majority of the new area in the square came from those
+00:08:57,580 --> 00:09:02,700
+ဒါဟာ ဘာနဲ့အလားတူလဲဆိုရင် စတုရန်းမှာ အသစ်တိုးဧရိယာ အများစုဟာ  
+အခုပြထားတဲ့ အဝါရောင် ဘားတန်းနှစ်ခုကနေ အဓိကလာသလိုပေါ့။ 
+
+
+
 
 130
-00:09:02,820 --> 00:09:07,997
-two bars, each with area x times dx, or how the bulk of the new volume in the cube
+00:09:02,700 --> 00:09:05,600
+သူတို့တစ်ခုစီ ဧရိယာက x အမြှောက် dx ဖြစ်တယ်။
+
+130
+00:09:05,600 --> 00:09:07,997
+(သို့) ကုဗတုံးရဲ့ ထပ်တိုး ထုထည်အသစ်မှာ
 
 131
-00:09:07,997 --> 00:09:13,300
-came from those three thin squares, each of which had a volume of x squared times dx.
+00:09:07,997 --> 00:09:14,540
+အဝါရောင် စတုရန်းပုံ အချပ်သုံးခုက အများဆုံးပါဝင်တဲ့ သဘောနဲ့ နှိုင်းယှဉ်စဉ်းစားနိုင်တယ်
+(သူတို့ တစ်ခုချင်း ထုတည်က x squared အမြှောက် dx ဖြစ်တယ်)
+
 
 132
 00:09:14,540 --> 00:09:17,432
-There will be many other terms of this expansion,
+ဖြန့်ထားတဲ့ အထဲမှာ အခြားအခြား terms တွေလည်းပဲ ပါသေးတာပေါ့
 
 133
 00:09:17,432 --> 00:09:21,251
-but all of them are just going to be some multiple of dx squared,
+သို့ပေမဲ့ သူတို့အားလုံးဟာ dx squared ရဲ့ multiple (ဆတိုးကိန်း)
+တစ်ခုခုပဲ ဖြစ်ပါလိမ့်မယ်
+
 
 134
-00:09:21,251 --> 00:09:25,185
-so we can safely ignore them, and what that means is that all but a
+00:09:21,251 --> 00:09:23,500
+ဒီတော့ ကျွန်တော့တို့ အဲဒါတွေကို လျစ်လျူရှုနိုင်ပါတယ်။
+ဆိုလိုတာက ...
 
 135
-00:09:25,185 --> 00:09:29,350
-negligible portion of the increase in the output comes from n copies of
+00:09:23,500 --> 00:09:31,260
+(လျစ်လျူရှုရလောက်တဲ့ ပိုးရှင်းကလွဲလို့) ထပ်တိုးထုထည် အားလုံးဟာ 
+“x to the power n - 1 အမြှောက် dx” ပုံစံတူ ကော်ပီ n ခုက လာတာဖြစ်တယ်
 
-136
-00:09:29,350 --> 00:09:31,260
-this x to the n minus 1 times dx.
 
 137
 00:09:31,940 --> 00:09:37,520
-That's what it means for the derivative of x to the n to be n times x to the n minus 1.
+x to the power n ရဲ့ derivative ဟာ n times x to the power n - 1 
+ဖြစ်တယ်ဆိုတာ ဒါကိုဆိုလိုတာပါပဲ
 
 138
-00:09:38,960 --> 00:09:43,220
-And even though, like I said in practice, you'll find yourself performing this
+00:09:38,960 --> 00:09:47,911
+ကျွန်တော်ပြောခဲ့သလို... သင်္ကေတအရ ထပ်ညွှန်းရှေ့ကိုချ၊ ထပ်ညွှန်းထဲက 1 နှုတ်
+အမြန်တွက်နည်းနဲ့ derivative တွက်ချက်မည် ဖြစ်သော်ငြားလည်း 
 
-139
-00:09:43,220 --> 00:09:47,911
-derivative quickly and symbolically, imagining the exponent hopping down to the front,
 
 140
 00:09:47,911 --> 00:09:52,280
-every now and then it's nice to just step back and remember why these rules work.
+ရံဖန်ရံခါဆိုသလို တစ်ဆင့်ပြန်ဆုတ်ပြီး အဲဒီလို rule တွေ ဘာကြောင့် အလုပ်ဖြစ်နေသလဲ
+စဉ်းစားကြည့်သင့်ပါတယ်။ အကြောင်းအရင်းကတော့.....
 
 141
-00:09:52,820 --> 00:09:56,880
-Not just because it's pretty, and not just because it helps remind us that math
+00:09:52,820 --> 00:10:00,332
+လှပရုံ သက်သက်ကြောင့် မဟုတ်၊ သင်္ချာဆိုတာ ကျက်စရာဖော်မြူလာ တစ်ပုံတစ်ပင်သာမက
+အဓိပ္ပါယ်လည်း အပြည့်ရှိပါလားလို့ ကျွန်တော်တို့ ပြန်သတိရစေတာ သက်သက်ကြောင့်လည်း မဟုတ်ပါ
 
-142
-00:09:56,880 --> 00:10:00,332
-actually makes sense and isn't just a pile of formulas to memorize,
 
 143
-00:10:00,332 --> 00:10:04,494
-but because it flexes that very important muscle of thinking about derivatives in
+00:10:00,332 --> 00:10:02,560
+သေးငယ်လှသည့် ပမာဏကွာဟချက်လေးများပေါ် အခြေခံသော
+derivative ဆိုင်ရာ ဆင်ခြင်စဉ်းစားခြင်းအတွက်
 
-144
-00:10:04,494 --> 00:10:05,560
-terms of tiny nudges.
+
+143
+00:10:02,560 --> 00:10:07,500
+အရေးပါသည့် (အတွေးအခေါ်) ကြွက်သား ပြေလျော့ဖြတ်လတ်စေခြင်းကြောင့်သာ ဖြစ်တယ်
 
 145
 00:10:07,500 --> 00:10:11,640
-As another example, think of the function f of x equals 1 divided by x.
+နောက်ဥပမာ တစ်ခုအနေနဲ့, f(x) = 1/x ဖန်ရှင် ကို စဉ်းစားကြည့်ပါ
 
 146
-00:10:12,700 --> 00:10:16,738
-Now on the hand you could just blindly try applying the power rule,
+00:10:12,700 --> 00:10:21,100
+တစ်ဖက်ကကြည့်ရင်, မှန်/မမှန် သေချာ မသိပေမဲ့ power rule ကို သုံးဖို့ စမ်းကြည့်နိုင်တယ်
+ဘာလို့လဲဆိုတော့ 1 အစား x က x to the power -1 လို့ ရေးတာနဲ့ အတူတူပဲမလား
 
-147
-00:10:16,738 --> 00:10:20,540
-since 1 divided by x is the same as writing x to the negative 1.
+
 
 148
 00:10:21,100 --> 00:10:24,433
-That would involve letting the negative 1 hop down in front,
+ထပ်ညွှန်း အနှုတ် 1 က ရှေ့ကို ကျလာမယ်
 
 149
 00:10:24,433 --> 00:10:27,440
-leaving behind 1 less than itself, which is negative 2.
+သူ့ကို 1 လျှော့ပေးရမှာ ဆိုတော့ ထပ်ညွှန်း -2 ကျန်ခဲ့မယ်
 
 150
-00:10:28,240 --> 00:10:31,444
-But let's have some fun and see if we can reason about this geometrically,
+00:10:28,240 --> 00:10:31,580
+သို့ပေမဲ့ အပျော်သဘောနဲ့ ဘာ့ကြောင့် အဲဒီလိုဖြစ်ရလဲ ဂျီဩမေတြီနဲ့ 
+ဆက်စပ်တွေးတောလို့ရမလား ကြည့်ရအောင်။ 
 
-151
-00:10:31,444 --> 00:10:33,580
-rather than just plugging it through some formula.
+
+150
+00:10:31,580 --> 00:10:34,860
+ဖော်မြူလာထဲ ဘုမသိဘမသိ အစားထိုးလိုက်တာနဲ့စာရင် ဒါက ပိုကောင်းပါတယ်။  
+
 
 152
 00:10:34,860 --> 00:10:40,180
-The value 1 over x is asking what number multiplied by x equals 1.
+‘1 အစား x’ ရဲ့ တန်ဖိုးဆိုတာ ၎င်းကို x နဲ့ မြှောက်ရင် 1 ရစေမဲ့ ကိန်းဂဏန်းက
+ဘယ်ဟာဖြစ်မလဲ ရှာတာပါပဲ
 
 153
 00:10:40,960 --> 00:10:42,820
-So here's how I'd like to visualize it.
+ဒီတော့ အဲဒီ 1/x ကို ကျွန်တော်က ဒီလို မြင်ကြည့်ပါမယ်
 
 154
 00:10:42,820 --> 00:10:48,120
-Imagine a little rectangular puddle of water sitting in two dimensions whose area is 1.
+2 ဒိုင်မေးရှင်း စတုဂံပုံ ရေကန်လေး တစ်ခုကို စိတ်ကူးကြည့်ပါ။ 
+သူ့ ဧရိယာက 1 ဖြစ်ပါမယ်။ 
 
 155
-00:10:48,960 --> 00:10:53,766
-And let's say that its width is x, which means that the height has to be 1 over x,
+00:10:48,960 --> 00:10:55,620
+သူ့ အကျယ်က x ဖြစ်မယ် ဆိုပါစို့... total ဧရိယာက 1 ဖြစ်ရမှာဆိုတော့
+သူ့ရဲ့ အမြင့်က 1 over x ဖြစ်ရပါမယ်။
 
-156
-00:10:53,766 --> 00:10:55,620
-since the total area of it is 1.
 
 157
 00:10:56,360 --> 00:11:01,040
-So if x was stretched out to 2, then that height is forced down to 1 half.
+ဒီတော့ x ကို 2 ထိ ဆန့်လိုက်ရင်, height ကို တစ်ဝက်ထိ ချပေးရမယ်
 
 158
 00:11:01,780 --> 00:11:05,920
-And if you increased x up to 3, then the other side has to be squished down to 1 third.
+တကယ်လို့ x ကို 3 ထိ တိုးလိုက်ရင်, height က သုံးပုံ တစ်ပုံထိ ကျုံ့သွားရမယ်
 
 159
 00:11:07,040 --> 00:11:10,680
-This is a nice way to think about the graph of 1 over x, by the way.
+ဒါဟာ 1 over x ရဲ့ ဂရပ်ဖ်ကို စဉ်းစားကြည့်ဖို့ တော်တော်လေး ကောင်းတဲ့နည်းလို့ ပြောရပါမယ် 
 
 160
 00:11:11,280 --> 00:11:15,360
-If you think of this width x of the puddle as being in the xy-plane,
+ရေကန်ရဲ့ အကျယ် x ကို xy-plane ပေါ်မှာ ရှိတယ်လို့ စဉ်းစားမယ်ဆိုရင်
 
 161
-00:11:15,360 --> 00:11:20,623
-then that corresponding output 1 divided by x, the height of the graph above that point,
+00:11:15,360 --> 00:11:20,623 
+သူနဲ့သက်ဆိုင်တဲ့ output ‘1 divided by x’ (သို့) အဲဒီအမှတ် အပေါ်တည့်တည့်ရှိ ဂရပ်ဖ် အမြင့်ဟာ
 
 162
 00:11:20,623 --> 00:11:24,940
-is whatever the height of your puddle has to be to maintain an area of 1.
+ရေကန်ဧရိယာ ကို 1 ဖြစ်စေဖို့ ရှိရမဲ့ ရေကန်ရဲ့ အမြင့် ပါပဲ
 
 163
 00:11:26,360 --> 00:11:29,358
-So with this visual in mind, for the derivative,
+ဒီတော့ ဒီပုံအတိုင်း ဆက်စဉ်းစားမယ်ဆိုရင်... derivative ရှာဖို့ရာအတွက်
+
 
 164
 00:11:29,358 --> 00:11:33,580
-imagine nudging up that value of x by some tiny amount, some tiny dx.
+x ကို ပမာဏ သေးသေးလေးတစ်ခု dx တိုးလိုက်တယ်လို့ စိတ်ကူးကြည့်ပါ
 
 165
-00:11:34,580 --> 00:11:37,401
-How must the height of this rectangle change so
-
-166
-00:11:37,401 --> 00:11:40,340
-that the area of the puddle remains constant at 1?
+00:11:34,580 --> 00:11:40,340
+ရေကန် ဧရိယာဟာ နဂိုအရှိအတိုင်း 1 ဖြစ်နေဖို့အတွက် ဒီ rectangle ရဲ့ height က 
+ဘယ်လို ပြောင်းပေးရမလဲ?
 
 167
 00:11:41,340 --> 00:11:46,020
-That is, increasing the width by dx adds some new area to the right here.
+ဆိုလိုတာက... width ကို dx တိုးလိုက်ခြင်းဟာ ဒီဘက်မှာ ဧရိယာအသစ် ဖြစ်ပေါ်စေတယ်
 
 168
 00:11:46,260 --> 00:11:50,355
-So the puddle has to decrease in height by some d 1 over x,
+ဒီတော့ ရေကန်ဟာ အမြင့်အားဖြင့် d 1 over x လျော့သွားရမယ်။
 
 169
 00:11:50,355 --> 00:11:54,860
-so that the area lost off of that top cancels out the area gained.
+ဒီလိုမှပဲ အပေါ်ဘက် လျော့သွားတဲ့ ဧရိယာနဲ့ တိုးလာတဲ့ ဧရိယာ cancel ဖြစ်သွားမယ်
 
 170
-00:11:56,100 --> 00:11:59,259
-You should think of that d 1 over x as being a negative amount,
-
-171
-00:11:59,259 --> 00:12:02,320
-by the way, since it's decreasing the height of the rectangle.
+00:11:56,100 --> 00:12:02,320
+ဒါနဲ့... d 1 over x ဧရိယာကို negative ပမာဏအနေနဲ့ စဉ်းစားသင့်တယ်။
+ဘာလို့လဲဆိုတော့ သူက rectangle အမြင့်ကို လျော့သွားစေတဲ့ အတွက်။
 
 172
 00:12:03,540 --> 00:12:04,400
@@ -688,67 +702,64 @@ And you know what?
 
 173
 00:12:04,840 --> 00:12:07,027
-I'm going to leave the last few steps here for you,
+ဒီမှာ... နောက်ဆုံးကျန်တဲ့ အဆင့် အနည်းငယ်ကို သင့်အတွက် ကျွန်တော် ချန်ထားမှာပါ
 
 174
 00:12:07,027 --> 00:12:09,720
-for you to pause and ponder and work out an ultimate expression.
+သင်ကိုယ်တိုင် စဉ်းစားပြီး နောက်ဆုံးရလဒ် expression ကို ဖော်ထုတ်ပါ
 
 175
 00:12:10,560 --> 00:12:14,121
-And once you reason out what d of 1 over x divided by dx should be,
+“d of 1 over x divided by dx” က ဘယ်ဟာဖြစ်သင့်လဲ ဆက်စပ်အဖြေရှာပြီးတာနဲ့ 
 
 176
-00:12:14,121 --> 00:12:17,839
-I want you to compare it to what you would have gotten if you had just
-
-177
-00:12:17,839 --> 00:12:21,820
-blindly applied the power rule, purely symbolically, to x to the negative 1.
+00:12:14,121 --> 00:12:21,820
+အဲ့ဒီအဖြေနဲ့ သင်္ကေတနည်းကိုပဲ အခြေခံပြီး “x to the negative 1” ကို
+power rule မျက်စိစုံမှိတ်သုံးပြီး ထွက်တဲ့အဖြေ ချိန်ကိုက်ကြည့်ပါ
 
 178
 00:12:23,980 --> 00:12:26,143
-And while I'm encouraging you to pause and ponder,
+သင့်ကို စဉ်းစားဆင်ခြင်ကြည်ဖို့ တိုက်တွန်းနေချိန်မှာပဲ
 
 179
 00:12:26,143 --> 00:12:28,520
-here's another fun challenge if you're feeling up to it.
+ဒီမှာ နောက်ထပ် ပျော်ဖို့ကောင်းတဲ့ challenge တစ်ခု... 
+သင့် စိတ်အားထက်သန်တယ် ဆိုရင် စမ်းကြည့်ဖို့ပါ
 
 180
 00:12:29,060 --> 00:12:33,420
-See if you can reason through what the derivative of the square root of x should be.
+“square root of x” ရဲ့ derivative က ဘာဖြစ်မလဲ တစ်ဆင့်ချင်း ဆက်စပ်စဉ်းစားလို့ရနိုင်မလား
+ကြိုးစားကြည့်ပါ
 
 181
 00:12:36,400 --> 00:12:40,053
-To finish things off, I want to tackle one more type of function,
+နောက်ဆုံးအနေနဲ့, နောက်ထပ် ဖန်ရှင်တစ်မျိုး ရင်ဆိုင်ဖြေရှင်း ကြည့်စေချင်ပါတယ်
 
 182
 00:12:40,053 --> 00:12:44,260
-trigonometric functions, and in particular let's focus on the sine function.
+တြီဂိုနိုမေ့ထရစ် ဖန်ရှင်တွေပါ။ sine ဖန်ရှင်ကို အဓိက အာရုံစိုက်ရအောင်။
 
 183
-00:12:45,320 --> 00:12:48,230
-So for this section I'm going to assume that you're already
+00:12:45,320 --> 00:12:51,674
+ဒီအပိုင်းမှာတော့ တြီဂိုဖန်ရှင်တွေကို unit circle နဲ့ ဘယ်လိုဆက်စပ်ရလဲ
+သင်ရင်းနှီးပြီးဖြစ်တယ်လို့ ကျွန်တော်ယူဆပါမယ်
 
-184
-00:12:48,230 --> 00:12:51,674
-familiar with how to think about trig functions using the unit circle,
+
 
 185
 00:12:51,674 --> 00:12:54,100
-the circle with a radius 1 centered at the origin.
+unit circle ဆိုတာ အချင်းဝက် 1 ယူနစ်ရှိပြီး origin မှာ 
+ဗဟိုဟ်ပြုထားတဲ့ စက်ဝိုင်းပါ
 
 186
 00:12:55,240 --> 00:12:59,152
-For a given value of theta, like say 0.8, you imagine yourself
+theta တန်ဖိုးတစ်ခု... 0.8 ဆိုပါစို့။ သင့်ကိုယ်သင်
 
 187
-00:12:59,152 --> 00:13:02,878
-walking around the circle starting from the rightmost point
+00:12:59,152 --> 00:13:06,480
+ညာဘက်အစွန်ဆုံး အမှတ်ကနေစပြီး  
+စက်ဝန်းတလျှောက် 0.8 အကွာအဝေး သွားပြီးတဲ့အထိ လမ်းလျှောက်သွားမယ်လို့ စိတ်ကူးကြည့်ပါ
 
-188
-00:13:02,878 --> 00:13:06,480
-until you've traversed that distance of 0.8 in arc length.
 
 189
 00:13:06,760 --> 00:13:11,718
